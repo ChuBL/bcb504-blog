@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jiyin Zhang">
+<meta name="dcterms.date" content="2023-01-26">
+
+<title>My_first_blog - Assignment 2: Plain Text</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">My_first_blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Assignment 2: Your Data</h1>
+            <p class="subtitle lead">Describing the dataset</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jiyin Zhang </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 26, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="my-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="my-dataset">MY DATASET</h2>
+<p>This dataset is generated based on the elements coexistence counts from Mindat.org database. The original data source is retrieved via Mindat API and stored in JSON format. Then after data pre-process and data cleaning steps, the retrieved data is cured and stored in CSV format. The dataset can be accessed at the <a href="https://github.com/ChuBL/BCB-504-Foundations-of-Data-Visualization/tree/main/assg%232">Github repository</a>, in the name of <strong>total_elements_mindat.csv</strong>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The CSV file of dataset is a concatenated version of 72 separate spread sheets of element triplets coexistence values. Each spread sheet has 2 + 72 columns, the first column indicates the background element, which should remain the same throughout each separate sheet. The second column records the second dimension of the element triplets Then the third dimension of elements are listed by the remaining columns. The value of cell <span class="math inline">\((i, j)\)</span> indicating the coexistence amount of three elements: the first two elements in <span class="math inline">\((i, 0)\)</span> and <span class="math inline">\((i, 1)\)</span>, and the third element in <span class="math inline">\((0, j)\)</span>.</p>
+</div>
+</div>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data Collection</h3>
+<p>The dataset was retrieved via Mindat API as a JSON file. In the data preprocessing step, the elements information are extracted and statistically recorded in a new JSON file. Then I reorganized the data into 72 spread sheets as CSV formats.</p>
+</section>
+</section>
+<section id="importing-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="importing-the-data">IMPORTING THE DATA</h2>
+<p>I’m going to use the built-in <code>read.csv</code> package to import CSV file.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'total_elements_mindat.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The <code>glimpse</code> command in the <code>Tidyverse</code> package is a nice way to summarize the data frame:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,184
+Columns: 74
+$ zaxis &lt;chr&gt; "H", "H", "H", "H", "H", "H", "H", "H", "H", "H", "H", "H", "H",…
+$ yaxis &lt;chr&gt; "H", "Li", "Be", "B", "C", "N", "O", "F", "Na", "Mg", "Al", "Si"…
+$ H     &lt;int&gt; 3228, 51, 66, 193, 330, 128, 3205, 141, 643, 472, 817, 1023, 524…
+$ Li    &lt;int&gt; 51, 51, 4, 8, 2, 0, 51, 4, 19, 6, 25, 39, 9, 1, 1, 6, 8, 0, 6, 0…
+$ Be    &lt;int&gt; 66, 4, 66, 3, 1, 0, 66, 1, 13, 4, 8, 31, 27, 0, 0, 4, 34, 0, 0, …
+$ B     &lt;int&gt; 193, 8, 3, 193, 13, 3, 192, 10, 50, 55, 52, 73, 3, 8, 24, 9, 89,…
+$ C     &lt;int&gt; 330, 2, 1, 13, 330, 23, 317, 12, 65, 55, 50, 46, 17, 30, 19, 11,…
+$ N     &lt;int&gt; 128, 0, 0, 3, 23, 128, 118, 5, 23, 13, 22, 10, 18, 48, 23, 6, 8,…
+$ O     &lt;int&gt; 3205, 51, 66, 192, 317, 118, 3205, 138, 643, 472, 817, 1021, 524…
+$ F     &lt;int&gt; 141, 4, 1, 10, 12, 5, 138, 141, 54, 22, 79, 58, 30, 24, 8, 14, 5…
+$ Na    &lt;int&gt; 643, 19, 13, 50, 65, 23, 643, 54, 643, 106, 182, 356, 89, 102, 3…
+$ Mg    &lt;int&gt; 472, 6, 4, 55, 55, 13, 472, 22, 106, 472, 147, 161, 86, 61, 28, …
+$ Al    &lt;int&gt; 817, 25, 8, 52, 50, 22, 817, 79, 182, 147, 817, 401, 169, 135, 3…
+$ Si    &lt;int&gt; 1023, 39, 31, 73, 46, 10, 1021, 58, 356, 161, 401, 1023, 15, 36,…
+$ P     &lt;int&gt; 524, 9, 27, 3, 17, 18, 524, 30, 89, 86, 169, 15, 524, 21, 1, 32,…
+$ S     &lt;int&gt; 531, 1, 0, 8, 30, 48, 531, 24, 102, 61, 135, 36, 21, 531, 27, 53…
+$ Cl    &lt;int&gt; 210, 1, 0, 24, 19, 23, 204, 8, 39, 28, 33, 36, 1, 27, 210, 26, 5…
+$ K     &lt;int&gt; 287, 6, 4, 9, 11, 6, 287, 14, 82, 50, 81, 162, 32, 53, 26, 287, …
+$ Ca    &lt;int&gt; 918, 8, 34, 89, 97, 8, 918, 58, 187, 131, 269, 424, 134, 84, 53,…
+$ Sc    &lt;int&gt; 8, 0, 0, 0, 0, 0, 8, 0, 1, 3, 0, 4, 3, 0, 0, 0, 5, 8, 0, 0, 0, 0…
+$ Ti    &lt;int&gt; 145, 6, 0, 3, 2, 0, 145, 18, 81, 11, 9, 116, 9, 2, 2, 30, 32, 0,…
+$ V     &lt;int&gt; 181, 0, 0, 3, 6, 8, 180, 2, 28, 24, 31, 27, 14, 12, 3, 10, 55, 0…
+$ Cr    &lt;int&gt; 40, 0, 0, 4, 5, 0, 40, 2, 7, 11, 4, 13, 2, 6, 3, 3, 11, 0, 1, 2,…
+$ Mn    &lt;int&gt; 406, 4, 9, 15, 17, 2, 406, 14, 81, 42, 70, 185, 98, 23, 17, 28, …
+$ Fe    &lt;int&gt; 663, 11, 9, 18, 22, 18, 663, 15, 130, 78, 136, 216, 176, 122, 32…
+$ Co    &lt;int&gt; 35, 0, 0, 0, 4, 1, 35, 0, 3, 0, 1, 1, 1, 12, 2, 0, 4, 0, 0, 1, 0…
+$ Ni    &lt;int&gt; 63, 0, 0, 0, 12, 4, 62, 0, 2, 1, 6, 7, 2, 15, 5, 1, 4, 0, 0, 2, …
+$ Cu    &lt;int&gt; 359, 1, 0, 4, 36, 10, 358, 6, 16, 16, 39, 29, 40, 87, 61, 16, 50…
+$ Zn    &lt;int&gt; 208, 0, 3, 0, 15, 1, 208, 1, 11, 16, 23, 32, 44, 46, 7, 7, 29, 0…
+$ Ga    &lt;int&gt; 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Ge    &lt;int&gt; 10, 0, 0, 0, 1, 0, 10, 0, 0, 0, 3, 1, 0, 4, 0, 0, 2, 0, 0, 0, 0,…
+$ As    &lt;int&gt; 397, 0, 3, 2, 4, 5, 397, 3, 36, 40, 42, 17, 9, 21, 14, 12, 112, …
+$ Se    &lt;int&gt; 26, 0, 0, 0, 0, 0, 26, 0, 2, 1, 4, 1, 0, 3, 2, 1, 3, 0, 0, 0, 0,…
+$ Br    &lt;int&gt; 3, 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Rb    &lt;int&gt; 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Sr    &lt;int&gt; 77, 1, 0, 9, 12, 0, 77, 6, 23, 4, 30, 30, 15, 5, 2, 4, 20, 0, 8,…
+$ Y     &lt;int&gt; 54, 1, 1, 2, 27, 0, 54, 5, 18, 1, 13, 21, 6, 6, 2, 2, 18, 0, 2, …
+$ Zr    &lt;int&gt; 70, 1, 3, 2, 9, 0, 70, 3, 56, 2, 1, 58, 9, 1, 10, 10, 31, 0, 1, …
+$ Nb    &lt;int&gt; 54, 0, 0, 0, 4, 0, 54, 4, 26, 4, 1, 32, 4, 1, 2, 12, 17, 0, 7, 1…
+$ Mo    &lt;int&gt; 49, 0, 0, 0, 0, 1, 49, 0, 6, 4, 3, 0, 6, 5, 0, 4, 9, 0, 0, 0, 0,…
+$ Ru    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Rh    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Pd    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Ag    &lt;int&gt; 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0…
+$ Cd    &lt;int&gt; 12, 0, 0, 0, 0, 0, 12, 1, 0, 0, 1, 0, 2, 8, 0, 1, 0, 0, 0, 0, 0,…
+$ In    &lt;int&gt; 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Sn    &lt;int&gt; 21, 0, 2, 1, 0, 1, 20, 0, 2, 2, 2, 8, 0, 1, 2, 0, 7, 1, 0, 0, 0,…
+$ Sb    &lt;int&gt; 32, 0, 0, 0, 0, 0, 32, 0, 4, 2, 5, 2, 0, 10, 3, 2, 5, 0, 2, 0, 0…
+$ Te    &lt;int&gt; 52, 0, 0, 0, 2, 0, 52, 0, 0, 8, 1, 0, 0, 9, 7, 0, 6, 0, 0, 0, 1,…
+$ I     &lt;int&gt; 12, 0, 0, 0, 0, 1, 12, 0, 3, 3, 0, 0, 0, 1, 3, 2, 3, 0, 0, 0, 2,…
+$ Cs    &lt;int&gt; 12, 0, 1, 1, 0, 0, 12, 2, 4, 0, 2, 8, 1, 0, 0, 1, 4, 0, 2, 1, 0,…
+$ Ba    &lt;int&gt; 134, 2, 3, 4, 12, 0, 134, 16, 42, 11, 34, 76, 32, 5, 9, 8, 18, 1…
+$ La    &lt;int&gt; 29, 0, 0, 0, 7, 0, 29, 0, 3, 1, 14, 15, 3, 0, 0, 0, 10, 0, 1, 1,…
+$ Ce    &lt;int&gt; 77, 0, 2, 5, 16, 0, 77, 8, 17, 10, 25, 47, 8, 4, 1, 1, 28, 0, 13…
+$ Nd    &lt;int&gt; 19, 0, 1, 0, 8, 0, 19, 1, 1, 0, 3, 5, 3, 2, 0, 0, 5, 0, 0, 0, 0,…
+$ Sm    &lt;int&gt; 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Gd    &lt;int&gt; 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0…
+$ Dy    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Er    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Yb    &lt;int&gt; 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Hf    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Ta    &lt;int&gt; 5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0…
+$ W     &lt;int&gt; 22, 0, 0, 0, 1, 0, 22, 0, 5, 1, 2, 3, 1, 0, 0, 0, 7, 0, 0, 1, 0,…
+$ Re    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Os    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Ir    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Pt    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Au    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ Hg    &lt;int&gt; 11, 0, 0, 0, 3, 4, 10, 0, 0, 0, 1, 0, 1, 1, 4, 0, 0, 0, 0, 0, 0,…
+$ Tl    &lt;int&gt; 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 4, 2, 2, 0, 0, 0, 2, 0, 0…
+$ Pb    &lt;int&gt; 229, 0, 1, 5, 28, 3, 228, 6, 3, 7, 27, 32, 27, 54, 39, 3, 13, 0,…
+$ Bi    &lt;int&gt; 42, 0, 0, 0, 0, 2, 41, 0, 1, 1, 1, 1, 11, 4, 1, 0, 1, 0, 0, 5, 1…
+$ Th    &lt;int&gt; 15, 0, 0, 1, 2, 0, 15, 2, 2, 0, 2, 4, 5, 0, 0, 1, 3, 0, 1, 0, 0,…
+$ U     &lt;int&gt; 272, 1, 0, 0, 41, 12, 272, 8, 33, 24, 21, 20, 51, 61, 2, 27, 54,…</code></pre>
+</div>
+</div>
+</section>
+<section id="describe-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="describe-the-data">DESCRIBE THE DATA</h2>
+<section id="data-set-type" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-type">Data Set Type</h3>
+<p>The dataset is stored as a great <strong>Flat Table</strong>, the items are arranged as each of the 72 elements, with the attributes of element triplets coexistence in the cells of corresponding sheets.</p>
+<div class="cell">
+<details>
+<summary>Element list</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">'H'</span>, <span class="st">'Li'</span>, <span class="st">'Be'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'N'</span>, <span class="st">'O'</span>, <span class="st">'F'</span>, <span class="st">'Na'</span>, <span class="st">'Mg'</span>, <span class="st">'Al'</span>, <span class="st">'Si'</span>, <span class="st">'P'</span>, <span class="st">'S'</span>, <span class="st">'Cl'</span>, <span class="st">'K'</span>, <span class="st">'Ca'</span>, <span class="st">'Sc'</span>, <span class="st">'Ti'</span>, <span class="st">'V'</span>, <span class="st">'Cr'</span>, <span class="st">'Mn'</span>, <span class="st">'Fe'</span>, <span class="st">'Co'</span>, <span class="st">'Ni'</span>, <span class="st">'Cu'</span>, <span class="st">'Zn'</span>, <span class="st">'Ga'</span>, <span class="st">'Ge'</span>, <span class="st">'As'</span>, <span class="st">'Se'</span>, <span class="st">'Br'</span>, <span class="st">'Rb'</span>, <span class="st">'Sr'</span>, <span class="st">'Y'</span>, <span class="st">'Zr'</span>, <span class="st">'Nb'</span>, <span class="st">'Mo'</span>, <span class="st">'Ru'</span>, <span class="st">'Rh'</span>, <span class="st">'Pd'</span>, <span class="st">'Ag'</span>, <span class="st">'Cd'</span>, <span class="st">'In'</span>, <span class="st">'Sn'</span>, <span class="st">'Sb'</span>, <span class="st">'Te'</span>, <span class="st">'I'</span>, <span class="st">'Cs'</span>, <span class="st">'Ba'</span>, <span class="st">'La'</span>, <span class="st">'Ce'</span>, <span class="st">'Nd'</span>, <span class="st">'Sm'</span>, <span class="st">'Gd'</span>, <span class="st">'Dy'</span>, <span class="st">'Er'</span>, <span class="st">'Yb'</span>, <span class="st">'Hf'</span>, <span class="st">'Ta'</span>, <span class="st">'W'</span>, <span class="st">'Re'</span>, <span class="st">'Os'</span>, <span class="st">'Ir'</span>, <span class="st">'Pt'</span>, <span class="st">'Au'</span>, <span class="st">'Hg'</span>, <span class="st">'Tl'</span>, <span class="st">'Pb'</span>, <span class="st">'Bi'</span>, <span class="st">'Th'</span>, <span class="st">'U'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "H"  "Li" "Be" "B"  "C"  "N"  "O"  "F"  "Na" "Mg" "Al" "Si" "P"  "S"  "Cl"
+[16] "K"  "Ca" "Sc" "Ti" "V"  "Cr" "Mn" "Fe" "Co" "Ni" "Cu" "Zn" "Ga" "Ge" "As"
+[31] "Se" "Br" "Rb" "Sr" "Y"  "Zr" "Nb" "Mo" "Ru" "Rh" "Pd" "Ag" "Cd" "In" "Sn"
+[46] "Sb" "Te" "I"  "Cs" "Ba" "La" "Ce" "Nd" "Sm" "Gd" "Dy" "Er" "Yb" "Hf" "Ta"
+[61] "W"  "Re" "Os" "Ir" "Pt" "Au" "Hg" "Tl" "Pb" "Bi" "Th" "U" </code></pre>
+</div>
+</div>
+</section>
+<section id="attribute-types" class="level3">
+<h3 class="anchored" data-anchor-id="attribute-types">Attribute Types</h3>
+<p>The attributes of the data are recorded in a 2-dimensional format, therefore the data frame rows will looks similar to the result of <code>glimpse</code> function.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  zaxis yaxis    H Li Be   B   C   N    O   F  Na  Mg  Al   Si   P   S  Cl   K
+1     H     H 3228 51 66 193 330 128 3205 141 643 472 817 1023 524 531 210 287
+2     H    Li   51 51  4   8   2   0   51   4  19   6  25   39   9   1   1   6
+3     H    Be   66  4 66   3   1   0   66   1  13   4   8   31  27   0   0   4
+4     H     B  193  8  3 193  13   3  192  10  50  55  52   73   3   8  24   9
+5     H     C  330  2  1  13 330  23  317  12  65  55  50   46  17  30  19  11
+6     H     N  128  0  0   3  23 128  118   5  23  13  22   10  18  48  23   6
+   Ca Sc  Ti   V Cr  Mn  Fe Co Ni  Cu  Zn Ga Ge  As Se Br Rb Sr  Y Zr Nb Mo Ru
+1 918  8 145 181 40 406 663 35 63 359 208  4 10 397 26  3  1 77 54 70 54 49  0
+2   8  0   6   0  0   4  11  0  0   1   0  0  0   0  0  0  0  1  1  1  0  0  0
+3  34  0   0   0  0   9   9  0  0   0   3  0  0   3  0  0  0  0  1  3  0  0  0
+4  89  0   3   3  4  15  18  0  0   4   0  0  0   2  0  0  1  9  2  2  0  0  0
+5  97  0   2   6  5  17  22  4 12  36  15  0  1   4  0  0  0 12 27  9  4  0  0
+6   8  0   0   8  0   2  18  1  4  10   1  0  0   5  0  1  0  0  0  0  0  1  0
+  Rh Pd Ag Cd In Sn Sb Te  I Cs  Ba La Ce Nd Sm Gd Dy Er Yb Hf Ta  W Re Os Ir
+1  0  0  3 12  2 21 32 52 12 12 134 29 77 19  1  1  0  0  1  0  5 22  0  0  0
+2  0  0  0  0  0  0  0  0  0  0   2  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+3  0  0  0  0  0  2  0  0  0  1   3  0  2  1  0  0  0  0  1  0  0  0  0  0  0
+4  0  0  0  0  0  1  0  0  0  1   4  0  5  0  0  0  0  0  0  0  0  0  0  0  0
+5  0  0  0  0  0  0  0  2  0  0  12  7 16  8  0  1  0  0  0  0  0  1  0  0  0
+6  0  0  0  0  0  1  0  0  1  0   0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  Pt Au Hg Tl  Pb Bi Th   U
+1  0  0 11  7 229 42 15 272
+2  0  0  0  0   0  0  0   1
+3  0  0  0  0   1  0  0   0
+4  0  0  0  0   5  0  1   0
+5  0  0  3  0  28  0  2  41
+6  0  0  4  0   3  2  0  12</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I have no idea why the render result of this <code>.qmd</code> file failed to adapt to the html style.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
