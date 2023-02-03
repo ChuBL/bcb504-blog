@@ -18,3 +18,6 @@ I believe there are some background sessions hidden behind the Rstudio ui. I thi
 Now you can tell the difference I was talking about. The rendered website based on the `docs` directory remaining at the old version.
 And if you clone the whole repository and render the `index.qmd` from the root directory, you can see the text in the upper left button has been changed from `My_first_blog` to `My first blog`.
 The reason to this difference is still mystic to me.
+
+### Fourth update
+Now the website seems rendered functionally after several minutes. The reason may be because of the cache updating frequency of the github server. Interesting.
