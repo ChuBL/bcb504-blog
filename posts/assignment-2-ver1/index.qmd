@@ -1,0 +1,70 @@
+---
+title: "Assignment 2: Your Data Ver1.0"
+author: "Jiyin Zhang"
+subtitle: "Describing the dataset"
+date: "2023-01-26"
+format: html
+---
+
+## MY DATASET
+
+This dataset is generated based on the elements coexistence counts from Mindat.org database. The original data source is retrieved via Mindat API and stored in JSON format. Then after data pre-process and data cleaning steps, the retrieved data is cured and stored in CSV format. The dataset can be accessed at the [Github repository](https://github.com/ChuBL/BCB-504-Foundations-of-Data-Visualization/tree/main/assg%232), in the name of **total_elements_mindat.csv**.
+
+::: callout-note
+The CSV file of dataset is a concatenated version of 72 separate spread sheets of element triplets coexistence values. Each spread sheet has 2 + 72 columns, the first column indicates the background element, which should remain the same throughout each separate sheet. The second column records the second dimension of the element triplets Then the third dimension of elements are listed by the remaining columns. The value of cell $(i, j)$ indicating the coexistence amount of three elements: the first two elements in $(i, 0)$ and $(i, 1)$, and the third element in $(0, j)$.
+:::
+
+### Data Collection
+
+The dataset was retrieved via Mindat API as a JSON file. In the data preprocessing step, the elements information are extracted and statistically recorded in a new JSON file. Then I reorganized the data into 72 spread sheets as CSV formats.
+
+## IMPORTING THE DATA
+
+I'm going to use the built-in `read.csv` package to import CSV file.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Code"
+#| output: false
+library(tidyverse)
+# result <- read.csv(file = 'total_elements_mindat.csv')
+result <- read.csv(file = 'total_elements_mindat.csv')
+```
+
+The `glimpse` command in the `Tidyverse` package is a nice way to summarize the data frame:
+
+```{r}
+#| code-fold: true
+#| code-summary: "Code"
+glimpse(result)
+```
+
+## DESCRIBE THE DATA
+
+### Data Set Type
+
+The dataset is stored as a great **Flat Table**, the items are arranged as each of the 72 elements, with the attributes of element triplets coexistence in the cells of corresponding sheets.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Element list"
+c('H', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Cs', 'Ba', 'La', 'Ce', 'Nd', 'Sm', 'Gd', 'Dy', 'Er', 'Yb', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Th', 'U')
+```
+
+### Attribute Types
+
+The attributes of the data are recorded in a 2-dimensional format, therefore the data frame rows will looks similar to the result of `glimpse` function.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Code"
+head(result)
+```
+
+## Question
+
+::: callout-note
+<del>I have no idea why the render result of this `.qmd` file failed to adapt to the html style.</del>
+
+The problem is that the `.qmd` file shall not consist of the hashtag \# symbol.
+:::

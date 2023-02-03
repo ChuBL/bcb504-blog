@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jiyin Zhang">
+<meta name="dcterms.date" content="2023-01-31">
+
+<title>My_first_blog - Assignment 2: Your Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">My_first_blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Assignment 2: Your Data</h1>
+            <p class="subtitle lead">Describing the dataset</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jiyin Zhang </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 31, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="my-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="my-dataset">MY DATASET</h2>
+<p>This dataset is generated based on the elements coexistence counts from Mindat.org database. The original data source is retrieved via Mindat API and stored in JSON format. Then after data pre-process and data cleaning steps, the retrieved data is cured and stored in CSV format. The dataset can be accessed at the <a href="https://github.com/ChuBL/BCB-504-Foundations-of-Data-Visualization/tree/main/assg%232">Github repository</a>, in the name of <strong>mineral.csv</strong>.</p>
+<!-- ::: callout-note -->
+<!-- The CSV file of dataset is a concatenated version of 72 separate spread sheets of element triplets coexistence values. Each spread sheet has 2 + 72 columns, the first column indicates the background element, which should remain the same throughout each separate sheet. The second column records the second dimension of the element triplets Then the third dimension of elements are listed by the remaining columns. The value of cell $(i, j)$ indicating the coexistence amount of three elements: the first two elements in $(i, 0)$ and $(i, 1)$, and the third element in $(0, j)$. -->
+<!-- ::: -->
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data Collection</h3>
+<p>The dataset was retrieved via Mindat API as a JSON file. In the data preprocessing step, the elements information are extracted in a new JSON file, in which some of the hierarchical structures have been removed in convenience of python’s <code>to_csv</code> function. Then the exported csv file can be read directly with R’s <code>read.csv</code> function.</p>
+</section>
+</section>
+<section id="importing-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="importing-the-data">IMPORTING THE DATA</h2>
+<p>I’m going to use the built-in <code>read.csv</code> package to import CSV file.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># result &lt;- read.csv(file = 'total_elements_mindat.csv')</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'mineral.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The <code>glimpse</code> command in the <code>Tidyverse</code> package is a nice way to summarize the data frame:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,883
+Columns: 17
+$ id              &lt;int&gt; 1, 2, 3, 4, 9, 10, 13, 14, 18, 19, 21, 23, 27, 31, 32,…
+$ name            &lt;chr&gt; "Abelsonite", "Abenakiite-(Ce)", "Abernathyite", "Abhu…
+$ elements        &lt;chr&gt; "-Ni-N-C-H-", "-Ce-Na-Si-O-P-C-S-", "-As-O-K-H-U-", "-…
+$ sigelements     &lt;chr&gt; "-Ni-N-C-H-", "-Ce-Na-Si-O-P-C-S-", "-As-O-K-H-U-", "-…
+$ yeardiscovery   &lt;chr&gt; "1975", "", "1956", "1983", "1990", "1855", "1974", "1…
+$ hmin            &lt;dbl&gt; 2.0, 4.0, 2.5, 2.0, 6.5, 2.0, 1.0, 2.5, 5.0, 3.5, 3.5,…
+$ hmax            &lt;dbl&gt; 3.0, 5.0, 3.0, 2.0, 6.5, 2.5, 1.5, 2.5, 6.0, 3.5, 3.5,…
+$ hardtype        &lt;int&gt; 0, 0, 0, 3, 0, 3, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, …
+$ specificgravity &lt;chr&gt; "1.4", "3.21", "", "4.29", "", "7.24 (calc)  7.2-7.4(m…
+$ strunz10ed1     &lt;int&gt; 10, 9, 8, 3, 9, 2, 10, 2, 9, 3, 8, 8, 6, 9, 9, 9, 9, 8…
+$ strunz10ed2     &lt;chr&gt; "C", "C", "E", "D", "A", "B", "A", "C", "D", "C", "B",…
+$ strunz10ed3     &lt;chr&gt; "A", "K", "B", "A", "G", "A", "A", "C", "E", "C", "B",…
+$ strunz10ed4     &lt;chr&gt; "20", "10", "15", "30", "05", "35", "20", "05", "10", …
+$ dana8ed1        &lt;chr&gt; "50", "61", "40", "10", "7", "2", "50", "0", "0", "11"…
+$ dana8ed2        &lt;chr&gt; "4", "4", "2a", "5", "5", "4", "4", "0", "0", "6", "6"…
+$ dana8ed3        &lt;chr&gt; "9", "1", "9", "9", "1", "1", "7", "0", "0", "17", "6"…
+$ dana8ed4        &lt;chr&gt; "1", "1", "1", "1", "4", "1", "1", "0", "0", "1", "3",…</code></pre>
+</div>
+</div>
+</section>
+<section id="describe-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="describe-the-data">DESCRIBE THE DATA</h2>
+<section id="data-set-type" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-type">Data Set Type</h3>
+<p>The dataset is stored as a great <strong>Flat Table</strong>, the items are 5883 mineral species from OpenMindat data server, and the columns representing the corresponding attributes.</p>
+<div class="cell">
+<details>
+<summary>Mineral Species Attributes</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">'id'</span>, <span class="st">'name'</span>, <span class="st">'elements'</span>, <span class="st">'sigelements'</span>, <span class="st">'yeardiscovery'</span>, <span class="st">'hmin'</span>, <span class="st">'hmax'</span>, <span class="st">'hardtype'</span>, <span class="st">'specificgravity'</span>, <span class="st">'strunz10ed1'</span>, <span class="st">'strunz10ed2'</span>, <span class="st">'strunz10ed3'</span>, <span class="st">'strunz10ed4'</span>, <span class="st">'dana8ed1'</span>, <span class="st">'dana8ed2'</span>, <span class="st">'dana8ed3'</span>, <span class="st">'dana8ed4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "id"              "name"            "elements"        "sigelements"    
+ [5] "yeardiscovery"   "hmin"            "hmax"            "hardtype"       
+ [9] "specificgravity" "strunz10ed1"     "strunz10ed2"     "strunz10ed3"    
+[13] "strunz10ed4"     "dana8ed1"        "dana8ed2"        "dana8ed3"       
+[17] "dana8ed4"       </code></pre>
+</div>
+</div>
+</section>
+<section id="attribute-types" class="level3">
+<h3 class="anchored" data-anchor-id="attribute-types">Attribute Types</h3>
+<p>The attributes of the data are recorded in a 2-dimensional format, therefore the data frame rows will looks similar to the result of <code>glimpse</code> function. The ‘id’ field is in a strict ascending order, while not continuous. The ‘id’ field of each row is determined by the website managers or data providers, therefore it has nothing to do with some standard identifications. The ‘names’ field indicates the IMA approved mineral species names. The ‘elements’ and ‘sigelements’ fields indicating the elements of the mineral chemical formual, while the ‘sigelement’ is determined by some significant elements as a subset of ‘elements’. In compatable with csv format, the elements in this field are separated by hyphens <span class="math inline">\(-\)</span>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id            name           elements        sigelements yeardiscovery hmin
+1  1      Abelsonite         -Ni-N-C-H-         -Ni-N-C-H-          1975  2.0
+2  2 Abenakiite-(Ce) -Ce-Na-Si-O-P-C-S- -Ce-Na-Si-O-P-C-S-                4.0
+3  3    Abernathyite       -As-O-K-H-U-       -As-O-K-H-U-          1956  2.5
+4  4        Abhurite        -Cl-Sn-O-H-        -Cl-Sn-O-H-          1983  2.0
+5  9  Abswurmbachite       -Cu-Mn-Si-O-       -Cu-Mn-Si-O-          1990  6.5
+6 10       Acanthite             -Ag-S-             -Ag-S-          1855  2.0
+  hmax hardtype            specificgravity strunz10ed1 strunz10ed2 strunz10ed3
+1  3.0        0                        1.4          10           C           A
+2  5.0        0                       3.21           9           C           K
+3  3.0        0                                      8           E           B
+4  2.0        3                       4.29           3           D           A
+5  6.5        0                                      9           A           G
+6  2.5        3 7.24 (calc)  7.2-7.4(meas)           2           B           A
+  strunz10ed4 dana8ed1 dana8ed2 dana8ed3 dana8ed4
+1          20       50        4        9        1
+2          10       61        4        1        1
+3          15       40       2a        9        1
+4          30       10        5        9        1
+5          05        7        5        1        4
+6          35        2        4        1        1</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<del>
+I have no idea why the render result of this <code>.qmd</code> file failed to adapt to the html style.
+</del>
+<p>The problem is that the <code>.qmd</code> file shall not consist of the hashtag # symbol.</p>
+<p>Another issue fixed is that the json file is originally contains 5883 items, which should be converted into 5883 rows of csv items. While the converting results shows there were over 5900 rows. The reason for this problem is that there are some annoying <code>\n</code>s in the attributes, which will end up with new rows in the exported csv file. I fixed this issue by simply removing all the <code>\n</code>s in the json file.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
