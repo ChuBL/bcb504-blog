@@ -13,7 +13,7 @@ about:
       href: https://linkedin.com
     - icon: github
       text: Github
-      href: https://github.com/ChuBL/BCB-504-Foundations-of-Data-Visualization
+      href: https://github.com/ChuBL/bcb504-blog
 ---
 
 This is my first blog created via quarto.
