@@ -281,6 +281,12 @@ $ hmean        &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 6 5        N  1.0    Acetamide   10  Qingsongite    NA</code></pre>
 </div>
 </div>
+</section>
+<section id="task-abstraction" class="level3">
+<h3 class="anchored" data-anchor-id="task-abstraction">TASK ABSTRACTION</h3>
+<section id="discover-hardness-distributions" class="level4">
+<h4 class="anchored" data-anchor-id="discover-hardness-distributions">Discover Hardness Distributions</h4>
+<p>Among all of the confusing hardness records in tens of elements, we want to sense the approximate hardness distribution via visualization.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_72, <span class="fu">aes</span>(<span class="at">x=</span>elements, <span class="at">y=</span>hmax)) <span class="sc">+</span></span>
@@ -300,12 +306,18 @@ $ hmean        &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 5 4        F  1.0   Barberiite    8        Topaz    NA
 6 5       Na  0.5    Rectorite    8 Diaoyudaoite    NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_30, <span class="fu">aes</span>(<span class="at">x=</span>elements, <span class="at">y=</span>hmax)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_30, <span class="fu">aes</span>(<span class="at">x=</span>elements, <span class="at">y=</span>hmin)) <span class="sc">+</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>, <span class="at">shape=</span><span class="dv">23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_30, <span class="fu">aes</span>(<span class="at">x=</span>elements, <span class="at">y=</span>hmax)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>, <span class="at">shape=</span><span class="dv">23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
 </div>
+</div>
+</section>
 </section>
 </section>
 <section id="question" class="level2">

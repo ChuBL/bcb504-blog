@@ -64,6 +64,11 @@ The attributes of the data are recorded in a 2-dimensional format, therefore the
 head(df_72)
 ```
 
+
+### TASK ABSTRACTION
+#### Discover Hardness Distributions
+
+Among all of the confusing hardness records in tens of elements, we want to sense the approximate hardness distribution via visualization.  
 ```{r}
 library(ggplot2)
 ggplot(df_72, aes(x=elements, y=hmax)) +
@@ -72,6 +77,8 @@ ggplot(df_72, aes(x=elements, y=hmax)) +
 
 ```{r}
 head(df_30)
+ggplot(df_30, aes(x=elements, y=hmin)) +
+  geom_point(size=2, shape=23)
 ggplot(df_30, aes(x=elements, y=hmax)) +
   geom_point(size=2, shape=23)
 ```
