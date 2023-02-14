@@ -2,7 +2,7 @@
 title: "Assignment 2: Your Data Ver2.0"
 author: "Jiyin Zhang"
 subtitle: "Describing the dataset"
-date: "2023-01-31"
+date: "2023-02-07"
 format: html
 ---
 
@@ -61,6 +61,96 @@ The attributes of the data are recorded in a 2-dimensional format, therefore the
 #| code-fold: true
 #| code-summary: "Code"
 head(result)
+```
+
+## Visualization
+
+### The correaltion between elements and hardness
+
+```{r}
+Elements <- c('H', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Cs', 'Ba', 'La', 'Ce', 'Nd', 'Sm', 'Gd', 'Dy', 'Er', 'Yb', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Th', 'U')
+library("tidyverse")
+
+df <- data.frame(Elements)
+df1 <- df %>%
+  add_column(hmin = NA, hmin_mineral = NA, hmax = NA, hmax_mineral = NA, hmean = NA)
+
+# for (row in 1:nrow(result)) {
+#     mineral_name <- result[row, "name"]
+#     elements <- str_extract_all(
+#       result[row, "elements"], regex("(?<=-)[A-Z]+[a-z]*(?=-)")
+#       )
+# 
+#     hmin <- result[row, "hmin"]
+#     for (element in elements){
+#         comparing_hmin <- df1[df1$Elements == element, 'hmin']
+#         if (is.na(comparing_hmin)){
+#           df1[df1$Elements == element, 'hmin'] <- hmin
+#         }
+#     }
+#     # hmax <- result[row, "hmax"]
+# }
+
+print(df1)
+print(df1[df1$Elements == 'H', 'hmin'])
+
+```
+
+```{r}
+comparing_hmin <- df1[df1$Elements == 'H', 'hmin']
+print(comparing_hmin)
+if (is.na(comparing_hmin)){
+  # df1[df1$Elements == element, 'hmin'] <- hmin
+  print('hello')
+}
+
+
+
+elements <- str_extract_all(
+      result[1, "elements"], regex("(?<=-)[A-Z]+[a-z]*(?=-)")
+      )
+print(elements)
+# for (element in elements){
+#   comparing_name <- df1[df1$Elements == element, 'Elements']
+#   #v comparing_hmin <- df1[df1$Elements == element, 'hmin']
+#   #print(element, sep = '\n')
+#   print(comparing_name, sep = '\n')
+#   #cat(comparing_hmin, sep = '\n')
+# }
+
+
+print(class(elements))
+for (i in 1:length(elements)){
+  print(elements[i])
+  print('hello')
+  }
+
+for (element in elements){
+  print(element)
+  print('hello')
+ }
+  
+# comparing_hmin <- df1[df1$Elements == 'H', 'hmin']
+# print(comparing_hmin)
+# print(class(comparing_hmin))
+# if (is.na(comparing_hmin)){
+#   print('test')
+# }
+
+
+# x <- c('-Ce-Na-Si-O-P-C-S-')
+# y <- str_extract_all(x, regex("(?<=-)[A-Z]+[a-z]*(?=-)"))
+# for (item in y){
+#   cat(item, sep="\n")
+# }
+#   
+# 
+# primes_list <- list(2, 3, 5, 7, 11, 13)
+
+# # loop version 1
+# for (p in primes_list) {
+#   print(p)
+# }
 ```
 
 ## Question

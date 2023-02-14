@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jiyin Zhang">
-<meta name="dcterms.date" content="2023-01-31">
+<meta name="dcterms.date" content="2023-02-07">
 
 <title>My First Blog - Assignment 2: Your Data Ver2.0</title>
 <style>
@@ -187,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 31, 2023</p>
+        <p class="date">February 7, 2023</p>
       </div>
     </div>
     
@@ -306,6 +306,191 @@ $ dana8ed4        &lt;chr&gt; "1", "1", "1", "1", "4", "1", "1", "0", "0", "1", 
 5          05        7        5        1        4
 6          35        2        4        1        1</code></pre>
 </div>
+</div>
+</section>
+</section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<section id="the-correaltion-between-elements-and-hardness" class="level3">
+<h3 class="anchored" data-anchor-id="the-correaltion-between-elements-and-hardness">The correaltion between elements and hardness</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Elements <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'H'</span>, <span class="st">'Li'</span>, <span class="st">'Be'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'N'</span>, <span class="st">'O'</span>, <span class="st">'F'</span>, <span class="st">'Na'</span>, <span class="st">'Mg'</span>, <span class="st">'Al'</span>, <span class="st">'Si'</span>, <span class="st">'P'</span>, <span class="st">'S'</span>, <span class="st">'Cl'</span>, <span class="st">'K'</span>, <span class="st">'Ca'</span>, <span class="st">'Sc'</span>, <span class="st">'Ti'</span>, <span class="st">'V'</span>, <span class="st">'Cr'</span>, <span class="st">'Mn'</span>, <span class="st">'Fe'</span>, <span class="st">'Co'</span>, <span class="st">'Ni'</span>, <span class="st">'Cu'</span>, <span class="st">'Zn'</span>, <span class="st">'Ga'</span>, <span class="st">'Ge'</span>, <span class="st">'As'</span>, <span class="st">'Se'</span>, <span class="st">'Br'</span>, <span class="st">'Rb'</span>, <span class="st">'Sr'</span>, <span class="st">'Y'</span>, <span class="st">'Zr'</span>, <span class="st">'Nb'</span>, <span class="st">'Mo'</span>, <span class="st">'Ru'</span>, <span class="st">'Rh'</span>, <span class="st">'Pd'</span>, <span class="st">'Ag'</span>, <span class="st">'Cd'</span>, <span class="st">'In'</span>, <span class="st">'Sn'</span>, <span class="st">'Sb'</span>, <span class="st">'Te'</span>, <span class="st">'I'</span>, <span class="st">'Cs'</span>, <span class="st">'Ba'</span>, <span class="st">'La'</span>, <span class="st">'Ce'</span>, <span class="st">'Nd'</span>, <span class="st">'Sm'</span>, <span class="st">'Gd'</span>, <span class="st">'Dy'</span>, <span class="st">'Er'</span>, <span class="st">'Yb'</span>, <span class="st">'Hf'</span>, <span class="st">'Ta'</span>, <span class="st">'W'</span>, <span class="st">'Re'</span>, <span class="st">'Os'</span>, <span class="st">'Ir'</span>, <span class="st">'Pt'</span>, <span class="st">'Au'</span>, <span class="st">'Hg'</span>, <span class="st">'Tl'</span>, <span class="st">'Pb'</span>, <span class="st">'Bi'</span>, <span class="st">'Th'</span>, <span class="st">'U'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Elements)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_column</span>(<span class="at">hmin =</span> <span class="cn">NA</span>, <span class="at">hmin_mineral =</span> <span class="cn">NA</span>, <span class="at">hmax =</span> <span class="cn">NA</span>, <span class="at">hmax_mineral =</span> <span class="cn">NA</span>, <span class="at">hmean =</span> <span class="cn">NA</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># for (row in 1:nrow(result)) {</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     mineral_name &lt;- result[row, "name"]</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     elements &lt;- str_extract_all(</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       result[row, "elements"], regex("(?&lt;=-)[A-Z]+[a-z]*(?=-)")</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     hmin &lt;- result[row, "hmin"]</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     for (element in elements){</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#         comparing_hmin &lt;- df1[df1$Elements == element, 'hmin']</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#         if (is.na(comparing_hmin)){</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#           df1[df1$Elements == element, 'hmin'] &lt;- hmin</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#         }</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#     }</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     # hmax &lt;- result[row, "hmax"]</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Elements hmin hmin_mineral hmax hmax_mineral hmean
+1         H   NA           NA   NA           NA    NA
+2        Li   NA           NA   NA           NA    NA
+3        Be   NA           NA   NA           NA    NA
+4         B   NA           NA   NA           NA    NA
+5         C   NA           NA   NA           NA    NA
+6         N   NA           NA   NA           NA    NA
+7         O   NA           NA   NA           NA    NA
+8         F   NA           NA   NA           NA    NA
+9        Na   NA           NA   NA           NA    NA
+10       Mg   NA           NA   NA           NA    NA
+11       Al   NA           NA   NA           NA    NA
+12       Si   NA           NA   NA           NA    NA
+13        P   NA           NA   NA           NA    NA
+14        S   NA           NA   NA           NA    NA
+15       Cl   NA           NA   NA           NA    NA
+16        K   NA           NA   NA           NA    NA
+17       Ca   NA           NA   NA           NA    NA
+18       Sc   NA           NA   NA           NA    NA
+19       Ti   NA           NA   NA           NA    NA
+20        V   NA           NA   NA           NA    NA
+21       Cr   NA           NA   NA           NA    NA
+22       Mn   NA           NA   NA           NA    NA
+23       Fe   NA           NA   NA           NA    NA
+24       Co   NA           NA   NA           NA    NA
+25       Ni   NA           NA   NA           NA    NA
+26       Cu   NA           NA   NA           NA    NA
+27       Zn   NA           NA   NA           NA    NA
+28       Ga   NA           NA   NA           NA    NA
+29       Ge   NA           NA   NA           NA    NA
+30       As   NA           NA   NA           NA    NA
+31       Se   NA           NA   NA           NA    NA
+32       Br   NA           NA   NA           NA    NA
+33       Rb   NA           NA   NA           NA    NA
+34       Sr   NA           NA   NA           NA    NA
+35        Y   NA           NA   NA           NA    NA
+36       Zr   NA           NA   NA           NA    NA
+37       Nb   NA           NA   NA           NA    NA
+38       Mo   NA           NA   NA           NA    NA
+39       Ru   NA           NA   NA           NA    NA
+40       Rh   NA           NA   NA           NA    NA
+41       Pd   NA           NA   NA           NA    NA
+42       Ag   NA           NA   NA           NA    NA
+43       Cd   NA           NA   NA           NA    NA
+44       In   NA           NA   NA           NA    NA
+45       Sn   NA           NA   NA           NA    NA
+46       Sb   NA           NA   NA           NA    NA
+47       Te   NA           NA   NA           NA    NA
+48        I   NA           NA   NA           NA    NA
+49       Cs   NA           NA   NA           NA    NA
+50       Ba   NA           NA   NA           NA    NA
+51       La   NA           NA   NA           NA    NA
+52       Ce   NA           NA   NA           NA    NA
+53       Nd   NA           NA   NA           NA    NA
+54       Sm   NA           NA   NA           NA    NA
+55       Gd   NA           NA   NA           NA    NA
+56       Dy   NA           NA   NA           NA    NA
+57       Er   NA           NA   NA           NA    NA
+58       Yb   NA           NA   NA           NA    NA
+59       Hf   NA           NA   NA           NA    NA
+60       Ta   NA           NA   NA           NA    NA
+61        W   NA           NA   NA           NA    NA
+62       Re   NA           NA   NA           NA    NA
+63       Os   NA           NA   NA           NA    NA
+64       Ir   NA           NA   NA           NA    NA
+65       Pt   NA           NA   NA           NA    NA
+66       Au   NA           NA   NA           NA    NA
+67       Hg   NA           NA   NA           NA    NA
+68       Tl   NA           NA   NA           NA    NA
+69       Pb   NA           NA   NA           NA    NA
+70       Bi   NA           NA   NA           NA    NA
+71       Th   NA           NA   NA           NA    NA
+72        U   NA           NA   NA           NA    NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df1[df1<span class="sc">$</span>Elements <span class="sc">==</span> <span class="st">'H'</span>, <span class="st">'hmin'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>comparing_hmin <span class="ot">&lt;-</span> df1[df1<span class="sc">$</span>Elements <span class="sc">==</span> <span class="st">'H'</span>, <span class="st">'hmin'</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(comparing_hmin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">is.na</span>(comparing_hmin)){</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># df1[df1$Elements == element, 'hmin'] &lt;- hmin</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'hello'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hello"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>elements <span class="ot">&lt;-</span> <span class="fu">str_extract_all</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      result[<span class="dv">1</span>, <span class="st">"elements"</span>], <span class="fu">regex</span>(<span class="st">"(?&lt;=-)[A-Z]+[a-z]*(?=-)"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(elements)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "Ni" "N"  "C"  "H" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for (element in elements){</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   comparing_name &lt;- df1[df1$Elements == element, 'Elements']</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   #v comparing_hmin &lt;- df1[df1$Elements == element, 'hmin']</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   #print(element, sep = '\n')</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(comparing_name, sep = '\n')</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   #cat(comparing_hmin, sep = '\n')</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">class</span>(elements))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "list"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(elements)){</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(elements[i])</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'hello'</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "Ni" "N"  "C"  "H" 
+
+[1] "hello"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (element <span class="cf">in</span> elements){</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(element)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'hello'</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a> }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Ni" "N"  "C"  "H" 
+[1] "hello"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comparing_hmin &lt;- df1[df1$Elements == 'H', 'hmin']</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print(comparing_hmin)</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># print(class(comparing_hmin))</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># if (is.na(comparing_hmin)){</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   print('test')</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- c('-Ce-Na-Si-O-P-C-S-')</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># y &lt;- str_extract_all(x, regex("(?&lt;=-)[A-Z]+[a-z]*(?=-)"))</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># for (item in y){</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   cat(item, sep="\n")</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="co"># primes_list &lt;- list(2, 3, 5, 7, 11, 13)</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co"># # loop version 1</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co"># for (p in primes_list) {</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(p)</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
