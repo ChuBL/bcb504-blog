@@ -30,7 +30,8 @@ I'm going to use the built-in `read.csv` package to import CSV file.
 #| output: false
 library(tidyverse)
 # result <- read.csv(file = 'total_elements_mindat.csv')
-result <- read.csv(file = 'hardness.csv')
+df_72 <- read.csv(file = 'hardness.csv')
+df_30 <- read.csv(file = 'hardness_30.csv')
 ```
 
 The `glimpse` command in the `Tidyverse` package is a nice way to summarize the data frame:
@@ -38,7 +39,7 @@ The `glimpse` command in the `Tidyverse` package is a nice way to summarize the 
 ```{r}
 #| code-fold: true
 #| code-summary: "Code"
-glimpse(result)
+glimpse(df_72)
 ```
 
 ## DESCRIBE THE DATA
@@ -60,15 +61,19 @@ The attributes of the data are recorded in a 2-dimensional format, therefore the
 ```{r}
 #| code-fold: true
 #| code-summary: "Code"
-head(result)
+head(df_72)
 ```
 
 ```{r}
 library(ggplot2)
-ggplot(result, aes(x=elements, y=hmax)) +
+ggplot(df_72, aes(x=elements, y=hmax)) +
   geom_point(size=2, shape=23)
+```
 
-
+```{r}
+head(df_30)
+ggplot(df_30, aes(x=elements, y=hmax)) +
+  geom_point(size=2, shape=23)
 ```
 ## Question
 
