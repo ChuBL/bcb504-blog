@@ -31,7 +31,7 @@ ggplot(df_30, aes(x=elements, y=X)) +
   geom_point(size=2, shape=23)
 ```
 ### Discriminability
-
+In terms of discriminability, we believe the larger the axis, the more details can viz to reveal.
 ```{r}
 head(df_30)
 ggplot(df_30, aes(x=elements, y=hmin)) +
@@ -39,6 +39,7 @@ ggplot(df_30, aes(x=elements, y=hmin)) +
   geom_point(size=2, shape=23)
 ```
 ### Separability
+We noticed that the values of 'hmin' are too small to tell, so we amplified it by applying exponential transform.
 ```{r}
 head(df_30)
 ggplot(df_30, aes(x=elements, y=exp(hmin))) +
@@ -48,10 +49,10 @@ ggplot(df_30, aes(x=elements, y=exp(hmin))) +
 ```
 
 ### Popout
+Nothing can be more striking than the areas of the scatters.
 ```{r}
 head(df_30)
 ggplot(df_30, aes(x=elements, y=hmax)) +
-  ylim(0, 100) +
   geom_point(size=df_30$hmax, shape=23)
 ```
 
