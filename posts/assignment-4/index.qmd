@@ -18,7 +18,7 @@ format: html
 #| output: false
 library(tidyverse)
 # result <- read.csv(file = 'total_elements_mindat.csv')
-df_72 <- read.csv(file = 'hardness.csv')
+# df_72 <- read.csv(file = 'hardness.csv')
 df_30 <- read.csv(file = 'hardness_30.csv')
 ```
 
@@ -27,13 +27,14 @@ df_30 <- read.csv(file = 'hardness_30.csv')
 Our main theme is about the hardness of minerals. To best demonstrate the characteristic of our elements list, I choose to visualize the index of the elements.
 ```{r}
 head(df_30)
-ggplot(df_30, aes(x=elements, y=X)) +
-  geom_point(size=2, shape=23)
+# ggplot(df_30, aes(x=elements, y=X)) +
+ggplot(df_30, aes(x=factor(elements, level=elements), y=X)) +
+  geom_point(size=2, shape=as.integer(df_30$X))
 ```
+
 ### Discriminability
 In terms of discriminability, we believe the larger the axis, the more details can viz to reveal.
 ```{r}
-head(df_30)
 ggplot(df_30, aes(x=elements, y=hmin)) +
   ylim(0, 100) +
   geom_point(size=2, shape=23)
@@ -41,7 +42,6 @@ ggplot(df_30, aes(x=elements, y=hmin)) +
 ### Separability
 We noticed that the values of 'hmin' are too small to tell, so we amplified it by applying exponential transform.
 ```{r}
-head(df_30)
 ggplot(df_30, aes(x=elements, y=exp(hmin))) +
   geom_point(size=2, shape=23)
   #scale_y_continuous(trans='log2')
@@ -49,10 +49,9 @@ ggplot(df_30, aes(x=elements, y=exp(hmin))) +
 ```
 
 ### Popout
-Nothing can be more striking than the areas of the scatters.
+Nothing can be more striking than the areas of the scatters. And guess what? We will also add some colors to make it as eye-catching as rainbow!
 ```{r}
-head(df_30)
 ggplot(df_30, aes(x=elements, y=hmax)) +
-  geom_point(size=df_30$hmax, shape=23)
+  geom_point(size=df_30$hmax, shape=23, colour = factor(as.integer(df_30$hmax)))
 ```
 
