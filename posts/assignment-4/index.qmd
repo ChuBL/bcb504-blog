@@ -1,0 +1,57 @@
+---
+title: "Assignment 4"
+author: "Jiyin Zhang"
+subtitle: "Marks and Channels"
+date: "2023-02-16"
+categories: [Assignment, DataViz]
+image: shiny_shit.jpg
+code-fold: true
+code-tools: true
+description: "A clever description that describes the stuff"
+format: html
+---
+
+## Import data 
+```{r}
+#| code-fold: true
+#| code-summary: "Code"
+#| output: false
+library(tidyverse)
+# result <- read.csv(file = 'total_elements_mindat.csv')
+df_72 <- read.csv(file = 'hardness.csv')
+df_30 <- read.csv(file = 'hardness_30.csv')
+```
+
+## Funny visualization
+### Expressiveness and Effectiveness
+Our main theme is about the hardness of minerals. To best demonstrate the characteristic of our elements list, I choose to visualize the index of the elements.
+```{r}
+head(df_30)
+ggplot(df_30, aes(x=elements, y=X)) +
+  geom_point(size=2, shape=23)
+```
+### Discriminability
+
+```{r}
+head(df_30)
+ggplot(df_30, aes(x=elements, y=hmin)) +
+  ylim(0, 100) +
+  geom_point(size=2, shape=23)
+```
+### Separability
+```{r}
+head(df_30)
+ggplot(df_30, aes(x=elements, y=exp(hmin))) +
+  geom_point(size=2, shape=23)
+  #scale_y_continuous(trans='log2')
+
+```
+
+### Popout
+```{r}
+head(df_30)
+ggplot(df_30, aes(x=elements, y=hmax)) +
+  ylim(0, 100) +
+  geom_point(size=df_30$hmax, shape=23)
+```
+
