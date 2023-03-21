@@ -461,7 +461,20 @@ ggplot(round1, aes(y = reorder(name, overall), x = postdraft, fill = NHLgames)) 
 
 ### Solution
 ```{r}
+NHLDraft_summary <- NHLDraft%>%
+  filter(round<4)%>%
+  group_by(round, postdraft) %>%
+  summarise(total_NHLgames = sum(NHLgames))
 
+
+heatmap <- ggplot(NHLDraft_summary, aes(y = round, x = postdraft, fill = total_NHLgames)) +
+  geom_tile() +
+  scale_fill_gradient(low = "blue", high = "red")+
+labs(title = "Fig 7.1 NHLgames heat map for postdraft",
+     subtitle = "Channel: Position; Mark: Color",
+     caption = "The draft year of 2000-2022")
+
+heatmap
 ```
 
 ## OTHER STUFF TO CONSIDER

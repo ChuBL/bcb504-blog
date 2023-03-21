@@ -270,7 +270,7 @@
     "href": "posts/assignment-5/index.html#heatmap",
     "title": "ASSIGNMENT 5: Happy Hockey",
     "section": "HEATMAP?",
-    "text": "HEATMAP?\nCould this be useful?\n\n\nCode\nround1<-NHLDraft%>%\n  filter(round==1)\n\nggplot(round1, aes(y = reorder(name, overall), x = postdraft, fill = NHLgames)) +\n  geom_tile() +\n  scale_fill_gradient(low = \"blue\", high = \"red\")\n\n\n\n\n\n\nSolution"
+    "text": "HEATMAP?\nCould this be useful?\n\n\nCode\nround1<-NHLDraft%>%\n  filter(round==1)\n\nggplot(round1, aes(y = reorder(name, overall), x = postdraft, fill = NHLgames)) +\n  geom_tile() +\n  scale_fill_gradient(low = \"blue\", high = \"red\")\n\n\n\n\n\n\nSolution\n\n\nCode\nNHLDraft_summary <- NHLDraft%>%\n  filter(round<4)%>%\n  group_by(round, postdraft) %>%\n  summarise(total_NHLgames = sum(NHLgames))\n\n\nheatmap <- ggplot(NHLDraft_summary, aes(y = round, x = postdraft, fill = total_NHLgames)) +\n  geom_tile() +\n  scale_fill_gradient(low = \"blue\", high = \"red\")+\nlabs(title = \"Fig 7.1 NHLgames heat map for postdraft\",\n     subtitle = \"Channel: Position; Mark: Color\",\n     caption = \"The draft year of 2000-2022\")\n\nheatmap"
   },
   {
     "objectID": "posts/assignment-5/index.html#other-stuff-to-consider",
@@ -284,7 +284,7 @@
     "href": "posts/assignment-5/index.html#conclusion",
     "title": "ASSIGNMENT 5: Happy Hockey",
     "section": "CONCLUSION",
-    "text": "CONCLUSION\nBased on your visualizations, what would you advise regarding this trade proposal? Why?\n\nSolution"
+    "text": "CONCLUSION\nBased on your visualizations, what would you advise regarding this trade proposal? Why?\n\nSolution\nTrading one first-round player to two second-round players plus one third-round player seems plausible.\nThe first-round players have the dominant number of games and NHL games in history. The second-round players cannot achieve half the number of games compared to the first. Nor to mention the further rounds. But the total number of games of 2 second-round players plus a third-round player seems plausible compared with one first-round player.\nI wonder what factors determine the profit of hockey games. Concerning whether the cost of training one good player is economical compared with three other players."
   },
   {
     "objectID": "posts/assignment-5/index.html#solution",
