@@ -1,0 +1,97 @@
+---
+title: "BCB 520 - Midterm Pokemon Portfolio Post"
+author: "Jiyin Zhang"
+subtitle: "Road to Masters"
+date: "2023-03-30"
+categories: [Assignment, DataViz, Smogon, Pokemon Showdown]
+image: image_j28MHAY0_1680213973861_raw.jpeg
+code-fold: true
+code-tools: true
+description: "Zapping Through the 10,000,000 Pokemon Battles"
+format: html
+---
+
+## Collect the data
+```{python}
+#| eval: false
+import os
+import requests
+from lxml import html
+from pathlib import Path
+import sys
+
+url = "https://www.smogon.com/stats/"
+data_dir = os.path.join(os.getcwd(), "data")
+
+def download_files(url, dir_path=data_dir):
+    # use pathlib to create the directory whether the parent directory exists or not
+    Path(dir_path).mkdir(parents=True, exist_ok=True)
+
+    response = requests.get(url)
+    parsed_body = html.fromstring(response.content)
+
+    for index in range(1, 65535):
+        try:
+            link = parsed_body.xpath("/html/body/pre/a[{index}]".format(index=index))[0]
+        except IndexError:
+            break
+        text = link.text
+        if ".." in text:
+            continue
+        if "." in text:
+            file_url = url + text
+            file_path = os.path.join(dir_path, file_url.split("/")[-1])
+            print("Downloading", file_url)
+            r = requests.get(file_url)
+            with open(file_path, "wb") as f:
+                f.write(r.content)
+            print("Downloaded", file_url)
+            #sys.exit()
+        else:
+            new_url = url + text
+            new_dir = os.path.join(dir_path, text)
+            download_files(new_url, new_dir)
+
+
+def batch_download_by_year(YEAR):
+    response = requests.get(url)
+    parsed_body = html.fromstring(response.content)
+    for index in range(1, 65535):
+        try:
+            link = parsed_body.xpath("/html/body/pre/a[{index}]".format(index=index))[0]
+        except IndexError:
+            break
+        text = link.text
+        if str(YEAR) in text:
+            print("Downloading", YEAR)
+            new_url = url + text
+            new_dir = os.path.join(data_dir, str(YEAR), text)
+            download_files(new_url, new_dir)
+
+    year_url = url + str(YEAR) + "/"
+    year_dir = os.path.join(data_dir, str(YEAR))
+    download_files(year_url, year_dir)
+
+
+def _test_parse():
+    response = requests.get(url)
+    parsed_body = html.fromstring(response.content)
+    link = parsed_body.xpath("/html/body/pre/a[999]")[0]
+    #text = link.text
+    #print(text)
+
+if __name__ == "__main__":
+    batch_download_by_year(2023)
+```
+
+I managed to grab a huge bunch of data from the Smogon forum since it is hard to collect similar Pokemon battle data from official websites, except for some crazy poke fans who can manually recognize and record the Pokemon ranking information and player teams from the official competition videos. 
+
+I am unfamiliar with some Pokemon names and skills in English, which inevitably lowers my efficiency in parsing the data. At the same time, the good news is the dataset size is overwhelming, which means I don't have to bother particular Pokemons but the whole tendency patterns.
+
+The collected data can be accessed from this [source](https://www.smogon.com/stats/). My local data collection is managed accordingly to the file hierarchy of this straightforward website.
+
+
+My current work focuses on the data recorded in 2023. The Pokemon battle data are stored in `.txt` and `.json` formats. I am working on reading some forum threads about the data discussion and explanations. The next plan is to convert the interesting part of the data into an R data frame and end up with visualizations.
+
+```{r}
+```

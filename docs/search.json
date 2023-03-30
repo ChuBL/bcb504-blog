@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "My First Blog",
     "section": "",
-    "text": "ASSIGNMENT 5: Happy Hockey\n\n\nCorrections for Hockey Data Visualizations\n\n\n\n\nAssignment\n\n\nDataViz\n\n\nTables\n\n\nScatterplot\n\n\nBarplot\n\n\nPiechart\n\n\n\n\nShould I trade these draft picks for this bag of magic beans…?\n\n\n\n\n\n\nMar 7, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 4\n\n\nMarks and Channels\n\n\n\n\nAssignment\n\n\nDataViz\n\n\n\n\nA clever description that describes the stuff\n\n\n\n\n\n\nFeb 16, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 3\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\nFeb 14, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Your Data Ver2.0\n\n\nDescribing the dataset\n\n\n\n\n\n\n\n\n\nFeb 7, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 2, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Your Data Ver1.0\n\n\nDescribing the dataset\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Plain Text\n\n\nDescribing the dataset\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\nNo matching items"
+    "text": "BCB 520 - Midterm Pokemon Portfolio Post\n\n\nRoad to Masters\n\n\n\n\nAssignment\n\n\nDataViz\n\n\nSmogon\n\n\nPokemon Showdown\n\n\n\n\nZapping Through the 10,000,000 Pokemon Battles\n\n\n\n\n\n\nMar 30, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n  \n\n\n\n\nASSIGNMENT 5: Happy Hockey\n\n\nCorrections for Hockey Data Visualizations\n\n\n\n\nAssignment\n\n\nDataViz\n\n\nTables\n\n\nScatterplot\n\n\nBarplot\n\n\nPiechart\n\n\n\n\nShould I trade these draft picks for this bag of magic beans…?\n\n\n\n\n\n\nMar 7, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n  \n\n\n\n\nAssignment 4\n\n\nMarks and Channels\n\n\n\n\nAssignment\n\n\nDataViz\n\n\n\n\nA clever description that describes the stuff\n\n\n\n\n\n\nFeb 16, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 3\n\n\nData Visualization\n\n\n\n\n\n\n\n\n\nFeb 14, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Your Data Ver2.0\n\n\nDescribing the dataset\n\n\n\n\n\n\n\n\n\nFeb 7, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 2, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 30, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Your Data Ver1.0\n\n\nDescribing the dataset\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment 2: Plain Text\n\n\nDescribing the dataset\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nJiyin Zhang\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -327,5 +327,40 @@
     "title": "ASSIGNMENT 5: Happy Hockey",
     "section": "Solution",
     "text": "Solution\n\n\nCode\nggplot(draft2018, aes(x = as.factor(postdraft), y=NHLgames, fill=factor(round, levels = rev(unique(round)))))+\n  geom_col(position = \"stack\")+\n  scale_fill_viridis(discrete = TRUE, direction = -1)+\nlabs(title = \"Fig 5.1 NHLgames for the players according to postdraft\",\n     subtitle = \"Channel: Length, Color, Mark: Line\",\n     caption = \"The draft year of 2018\")\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nI don’t quite understand the question: > Do we really only want data from the 2018 draft class?\nDo you mean we should plot other stacked charts with different x-axis?\n\n\n\n\nCode\nggplot(draft2018, aes(x = as.factor(pickinRound), y=NHLgames, fill=factor(round, levels = rev(unique(round)))))+\n  geom_col(position = \"stack\")+\n  scale_fill_viridis(discrete = TRUE, direction = -1)+\nlabs(title = \"Fig 5.2 NHLgames for the players according to pickinRound\",\n     subtitle = \"Channel: Length, Color, Mark: Line\",\n     caption = \"The draft year of 2018\")"
+  },
+  {
+    "objectID": "posts/midterm-post/index.html",
+    "href": "posts/midterm-post/index.html",
+    "title": "BCB 520 - Midterm Pokemon Portfolio Post",
+    "section": "",
+    "text": "Code\nimport os\nimport requests\nfrom lxml import html\nfrom pathlib import Path\nimport sys\n\nurl = \"https://www.smogon.com/stats/\"\ndata_dir = os.path.join(os.getcwd(), \"data\")\n\ndef download_files(url, dir_path=data_dir):\n    # use pathlib to create the directory whether the parent directory exists or not\n    Path(dir_path).mkdir(parents=True, exist_ok=True)\n\n    response = requests.get(url)\n    parsed_body = html.fromstring(response.content)\n\n    for index in range(1, 65535):\n        try:\n            link = parsed_body.xpath(\"/html/body/pre/a[{index}]\".format(index=index))[0]\n        except IndexError:\n            break\n        text = link.text\n        if \"..\" in text:\n            continue\n        if \".\" in text:\n            file_url = url + text\n            file_path = os.path.join(dir_path, file_url.split(\"/\")[-1])\n            print(\"Downloading\", file_url)\n            r = requests.get(file_url)\n            with open(file_path, \"wb\") as f:\n                f.write(r.content)\n            print(\"Downloaded\", file_url)\n            #sys.exit()\n        else:\n            new_url = url + text\n            new_dir = os.path.join(dir_path, text)\n            download_files(new_url, new_dir)\n\n\ndef batch_download_by_year(YEAR):\n    response = requests.get(url)\n    parsed_body = html.fromstring(response.content)\n    for index in range(1, 65535):\n        try:\n            link = parsed_body.xpath(\"/html/body/pre/a[{index}]\".format(index=index))[0]\n        except IndexError:\n            break\n        text = link.text\n        if str(YEAR) in text:\n            print(\"Downloading\", YEAR)\n            new_url = url + text\n            new_dir = os.path.join(data_dir, str(YEAR), text)\n            download_files(new_url, new_dir)\n\n    year_url = url + str(YEAR) + \"/\"\n    year_dir = os.path.join(data_dir, str(YEAR))\n    download_files(year_url, year_dir)\n\n\ndef _test_parse():\n    response = requests.get(url)\n    parsed_body = html.fromstring(response.content)\n    link = parsed_body.xpath(\"/html/body/pre/a[999]\")[0]\n    #text = link.text\n    #print(text)\n\nif __name__ == \"__main__\":\n    batch_download_by_year(2023)\n\n\nI managed to grab a huge bunch of data from the Smogon forum since it is hard to collect similar Pokemon battle data from official websites, except for some crazy poke fans who can manually recognize and record the Pokemon ranking information and player teams from the official competition videos.\nI am unfamiliar with some Pokemon names and skills in English, which inevitably lowers my efficiency in parsing the data. At the same time, the good news is the dataset size is overwhelming, which means I don’t have to bother particular Pokemons but the whole tendency patterns.\nThe collected data can be accessed from this source. My local data collection is managed accordingly to the file hierarchy of this straightforward website.\nMy current work focuses on the data recorded in 2023. The Pokemon battle data are stored in .txt and .json formats. I am working on reading some forum threads about the data discussion and explanations. The next plan is to convert the interesting part of the data into an R data frame and end up with visualizations."
+  },
+  {
+    "objectID": "posts/midterm-post/index.html#expressiveness-and-effectiveness",
+    "href": "posts/midterm-post/index.html#expressiveness-and-effectiveness",
+    "title": "BCB 520 - Midterm Pokemon Portfolio Post",
+    "section": "Expressiveness and Effectiveness",
+    "text": "Expressiveness and Effectiveness\n\nCorrected Version\n\n\n\n\n\nWrong Version\nOur main theme is about the hardness of minerals. To best demonstrate the characteristic of our elements list, I choose to visualize the index of the elements."
+  },
+  {
+    "objectID": "posts/midterm-post/index.html#discriminability",
+    "href": "posts/midterm-post/index.html#discriminability",
+    "title": "BCB 520 - Midterm Pokemon Portfolio Post",
+    "section": "Discriminability",
+    "text": "Discriminability\n\nCorrected Version\n\n\n\n\n\nWrong Version"
+  },
+  {
+    "objectID": "posts/midterm-post/index.html#separability",
+    "href": "posts/midterm-post/index.html#separability",
+    "title": "BCB 520 - Midterm Pokemon Portfolio Post",
+    "section": "Separability",
+    "text": "Separability\n\nCorrected Version"
+  },
+  {
+    "objectID": "posts/midterm-post/index.html#import-data",
+    "href": "posts/midterm-post/index.html#import-data",
+    "title": "BCB 520 - Midterm Pokemon Portfolio Post",
+    "section": "Import data",
+    "text": "Import data\n\n\nCode\nlibrary(tidyverse)\n# result <- read.csv(file = 'total_elements_mindat.csv')\n#mineral <- read.csv(file = 'mineral.csv')\n# result <- read.csv(file = 'total_elements_mindat.csv')\n# df_72 <- read.csv(file = 'hardness.csv')\n#df_30 <- read.csv(file = 'hardness_30.csv')"
   }
 ]

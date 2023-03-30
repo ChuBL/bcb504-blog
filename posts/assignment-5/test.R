@@ -1,26 +1,40 @@
+library(tidyverse)
+library(dplyr)
 library(ggplot2)
+library(readxl)
+library(plotly)
+library(viridis)
+setwd("/Users/blc/rspace/semester/bcb504/blog/bcb504-blog/posts/assignment-5")
 
-# create sample data
-df <- data.frame(category = rep(paste0("Category ", 1:20), each = 5),
-                 value = rnorm(100))
+NHLDraft<-read.csv("NHLDraft.csv")
+NHLDictionary<-read_excel("NHLDictionary.xlsx")
+draft2018<-NHLDraft%>%
+  filter(draftyear==2018 & postdraft<6)
 
-# define the breakpoints
-breakpoints <- c(5, 10, 15, 20)
+drafttot2018 <- draft2018%>%
+  group_by(playerId, round, overall, position, name)%>%
+  summarise(totgames=sum(NHLgames))
 
-# create a new column in the data frame to indicate which subplot each observation belongs to
-df$subplot <- cut(as.numeric(factor(df$category)), breakpoints, labels = FALSE)
+drafttot2018_sorted  <- drafttot2018[order(drafttot2018$round), ]
 
-# create the bar chart with subplots
-ggplot(df, aes(x = category, y = value)) +
-  geom_bar(stat = "identity") +
-  facet_wrap(~subplot, nrow = 2)
+color_palette <- viridis(length(unique(drafttot2018_sorted$round)))
 
+plot <- plot_ly(drafttot2018_sorted, x = ~name, y = ~totgames, type = "bar", color = ~as.factor(round),
+                colors = color_palette)
+plot <- plot %>%
+  layout(xaxis = list(type = "category", automargin = TRUE),
+         margin = list(l = 100),
+         title = list(text = paste0('Fig 4.1 Total games for the players',
+                                    '<br>',
+                                    '<sup>',
+                                    'Channel: Position, Mark: Point, Line',
+                                    '</sup>')),
+         annotations = 
+           list(x = 1, y = -0.1, text = "The draft year of 2018", 
+                showarrow = F, xref='paper', yref='paper', 
+                xanchor='right', yanchor='auto', xshift=0, yshift=-100,
+                font=list(size=15, color="black")))%>%
+  config(scrollZoom = TRUE)%>%
+  layout(xaxis = list(categoryorder = "array", categoryarray = drafttot2018_sorted$name))
 
-# create a sample data frame
-df <- data.frame(values = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
-
-# find the quarter point value using quantile()
-quarter_point <- quantile(df$values, 0.25)
-
-# print the quarter point value
-quarter_point
+ggplotly(plot)
