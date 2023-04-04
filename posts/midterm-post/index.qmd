@@ -95,3 +95,14 @@ My current work focuses on the data recorded in 2023. The Pokemon battle data ar
 
 ```{r}
 ```
+
+# Visualization Ideas
+Plot the pokemon in a network visualization: using sizes to amplify the high ranked pm, and the links for their teammates, checkers and counters. Hopefully highlight the teammates interactively when user picks some pms.
+
+Or I will generate an example by pretending to be a user to create a pokemon team from scratch using the visualization.
+
+The purpose of these visualization is to act as a pokemon consult. It will tell you the often used pokemon, and their teammates.
+
+After you choose the team, using visualization to show the potential foes for each pokemon in the team. And for the most dangerous foe, suggest the best counters.
+
+Plot the skills for select pokemons using stacked graph.
