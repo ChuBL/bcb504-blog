@@ -10,8 +10,34 @@ code-tools: true
 description: "Zapping Through the 10,000,000 Pokemon Battles"
 format: html
 ---
+# PREAMBLE
 
-## Collect the data
+
+```{r}
+#| code-fold: true
+#| output: false
+library(igraph)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+library(jsonlite)
+```
+
+<p style="color:red">POKEMONS.</p>
+
+Smogon is a popular online community of competitive Pokémon players that was founded in 2004. The community focuses on the competitive side of Pokémon battling, providing resources such as guides, forums, and a tier system that classifies Pokémon based on their power level. Smogon's tier system is used by many competitive players to build their teams and strategies. The community also hosts tournaments and events for players to compete in.
+
+Pokemon Showdown is an online battle simulator created by Smogon that allows players to build and battle with Pokémon teams in a virtual environment. It is widely used by the competitive Pokémon community and is an important tool for testing and refining strategies. Players can customize their teams with specific moves, items, and abilities, and then battle against other players in real-time.
+
+The objective of this study is to develop effective visualizations for the comprehensive datasets available in the Smogon databases. The aim is to present the Pokemon battle data in a clear and intuitive manner using visual plots. Through the use of such visualizations, we aim to provide valuable insights and suggestions to users on how to build a successful Pokemon battle team. Our approach seeks to enhance the user's understanding of the data by presenting it in a visually engaging format, thereby enabling them to make informed decisions when building their team. The ultimate goal is to offer an optimized user experience that facilitates an improved decision-making process and increases the success rate of the user's Pokemon battle team.
+
+
+
+
+# Data Preparation
+
+
 ```{python}
 #| eval: false
 import os
@@ -84,25 +110,292 @@ if __name__ == "__main__":
     batch_download_by_year(2023)
 ```
 
-I managed to grab a huge bunch of data from the Smogon forum since it is hard to collect similar Pokemon battle data from official websites, except for some crazy poke fans who can manually recognize and record the Pokemon ranking information and player teams from the official competition videos. 
+<!-- I managed to grab a huge bunch of data from the Smogon forum since it is hard to collect similar Pokemon battle data from official websites, except for some crazy poke fans who can manually recognize and record the Pokemon ranking information and player teams from the official competition videos.  -->
 
-I am unfamiliar with some Pokemon names and skills in English, which inevitably lowers my efficiency in parsing the data. At the same time, the good news is the dataset size is overwhelming, which means I don't have to bother particular Pokemons but the whole tendency patterns.
+<!-- I am unfamiliar with some Pokemon names and skills in English, which inevitably lowers my efficiency in parsing the data. At the same time, the good news is the dataset size is overwhelming, which means I don't have to bother particular Pokemons but the whole tendency patterns. -->
 
-The collected data can be accessed from this [source](https://www.smogon.com/stats/). My local data collection is managed accordingly to the file hierarchy of this straightforward website.
+<!-- The collected data can be accessed from this [source](https://www.smogon.com/stats/). My local data collection is managed accordingly to the file hierarchy of this straightforward website. -->
 
 
-My current work focuses on the data recorded in 2023. The Pokemon battle data are stored in `.txt` and `.json` formats. I am working on reading some forum threads about the data discussion and explanations. The next plan is to convert the interesting part of the data into an R data frame and end up with visualizations.
+<!-- My current work focuses on the data recorded in 2023. The Pokemon battle data are stored in `.txt` and `.json` formats. I am working on reading some forum threads about the data discussion and explanations. The next plan is to convert the interesting part of the data into an R data frame and end up with visualizations. -->
+
+We applied the dataset called `gen9vgc2023series2-1630` for this pokemon battle research. 
+
+**gen9** stands for the 9th generation of pokemon of Scarlet & Violet. The games will feature a brand new open-world region, three original starters, and new Legendaries for players to discover. 
+
+**vgc2023** stands for the Pokemon VGC (Video Game Championships) rules in 2023. The rules can vary slightly from year to year, but generally, the VGC format is a double battle format where each player brings a team of six Pokemon and chooses four of them to use in each battle. Players can only use Pokemon from the current generation of games, and there are restrictions on which Pokemon are allowed based on their species, level, and items. 
+
+**series2** refers to detailed battle rules. This series allows trainers to use a team of 3-6 Pokémon (for Singles) or 4-6 Pokémon (for Doubles) from Level 1 to Level 100, with all Pokémon then set to Level 50. There are more details omitted here.
+
+**1630** stands for a specific battle tiers for a fan-made rules.
+
 
 ```{r}
+#| code-fold: true
+#| output: false
+# Read the CSV files
+pokemon_data <- read_csv("gen9vgc2023series2-1630.csv")
+pokemon_data$`Usage%` <- as.numeric(gsub("%", "", pokemon_data$`Usage%`))
+edge_data <- read_csv("teammates.csv")
+
+# Filter the top 50 Pokemon
+top_20_pokemon <- head(pokemon_data, 20)
+```
+```{r}
+top_20_pokemon
+```
+<!-- gen9vgc2023series2-1630 -->
+<!--  Total battles: 1878825 -->
+<!--  Avg. weight/team: 0.021 -->
+
+The given data frame provides information on the top used Pokemon in the Smogon database, along with their usage percentages, weighted and unweighted raw counts, and "real" counts. The "real" count refers only to the Pokemon that actually appear in battle, as opposed to counting all six Pokemon in a team. The data frame provides valuable insights into the popularity of different Pokemon in the Smogon community and can be used to inform strategic decisions regarding team building and battling.
+
+# Visualizations
+
+```{r}
+#| code-fold: true
+#| output: false
+
+top20_pokemon_list <- pokemon_data$Pokemon[1:20]
+edge_data <- subset(edge_data, from %in% top20_pokemon_list & to %in% top20_pokemon_list)
+# Create a graph from the edge data
+g <- graph_from_data_frame(edge_data, directed = FALSE)
+
+# Set vertex attributes: size and labels
+V(g)$size <- top_20_pokemon$`Usage%`
+V(g)$label <- top_20_pokemon$Pokemon
+
+# Set edge attributes: width
+E(g)$width <- as.numeric(substr(edge_data$weight, 1, nchar(edge_data$weight) - 1)) / 100
 ```
 
-# Visualization Ideas
-Plot the pokemon in a network visualization: using sizes to amplify the high ranked pm, and the links for their teammates, checkers and counters. Hopefully highlight the teammates interactively when user picks some pms.
+```{r}
+# Plot the graph
+suppressWarnings({
+plot(g,
+     vertex.label.cex = 0.8, # Adjust the font size of vertex labels
+     vertex.label.family = "sans",
+     vertex.label.color = "black",
+     vertex.frame.color = "black",
+     vertex.color = "lightblue",
+     edge.arrow.size = 0,
+     edge.color = "gray",
+     layout = layout_with_fr(g, niter = 2000) # Set the layout algorithm
+)
+})
 
-Or I will generate an example by pretending to be a user to create a pokemon team from scratch using the visualization.
+```
 
-The purpose of these visualization is to act as a pokemon consult. It will tell you the often used pokemon, and their teammates.
+These codes aim to create a network visualization of the top 20 Pokemon and their teammates in the gen9 VGC 2023 series 2 using the R package igraph. The code reads in two CSV files, "gen9vgc2023series2-1630.csv" and "teammates.csv", which contain the data on the Pokemon and their teammates. The graph is plotted with various visualization settings, such as adjusting the font size of vertex labels, setting the layout algorithm to layout_with_fr(), and suppressing any warning messages that may arise during the plotting process. The resulting graph represents the top 20 Pokemon and their teammates as nodes and edges, respectively, with the size of each node representing its usage percentage.
 
-After you choose the team, using visualization to show the potential foes for each pokemon in the team. And for the most dangerous foe, suggest the best counters.
+```{r}
 
-Plot the skills for select pokemons using stacked graph.
+# Create a data frame with the usage percentages for each teammate
+teammates <- data.frame(
+  Name = c("Iron Bundle", "Great Tusk", "Iron Hands", "Arcanine", "Amoonguss", "Kingambit", "Dondozo", "Dragonite", "Talonflame", "Tatsugiri", "Roaring Moon"),
+  Usage = c(37.840, 29.509, 27.440, 23.847, 23.497, 19.474, 17.338, 17.326, 16.669, 16.646, 14.669)
+)
+
+# Reorder the factor levels of the Name variable based on the Usage variable
+teammates$Name <- factor(teammates$Name, levels = teammates$Name[order(desc(teammates$Usage))])
+
+# Create a bar plot
+ggplot(data = teammates, aes(x = Name, y = Usage)) +
+  geom_bar(stat = "identity") +
+  xlab("Teammate Name") +
+  ylab("Usage Percentage") +
+  ggtitle("Usage Percentages of Teammates for Flutter Mane")
+
+```
+
+Usage Percentages of Teammates for Flutter Mane, ordered by the usage percentages.
+
+
+```{r}
+
+# Create a data frame with the names and weights of the teammates
+teammates <- data.frame(
+  from = rep("Flutter Mane", times = 11),
+  to = c("Iron Bundle", "Great Tusk", "Iron Hands", "Arcanine", "Amoonguss", "Kingambit", "Dondozo", "Dragonite", "Talonflame", "Tatsugiri", "Roaring Moon"),
+  weight = c(37.840, 29.509, 27.440, 23.847, 23.497, 19.474, 17.338, 17.326, 16.669, 16.646, 14.669)
+)
+
+# Create a graph object
+g <- graph_from_data_frame(teammates, directed = TRUE)
+
+# Set the vertex attributes
+V(g)$label <- V(g)$name
+V(g)$size <- 20
+
+# Set the edge attributes
+E(g)$width <- 1/100 * E(g)$weight
+
+# set size of nodes based on Usage% from top_20_pokemon
+size <- top_20_pokemon$`Usage%` * 1000
+
+# color nodes based on Usage%
+cols <- colorRampPalette(c("blue", "red"))(length(size))
+cols <- cols[rank(rank(size))]
+
+# # Add the size legend
+# legend("bottomright", 
+#        legend = c("Usage%"),
+#        cex = 0.8,
+#        pt.cex = 2,
+#        pt.bg = "white",
+#        pch = 21,
+#        pt.col = "black",
+#        bty = "n",
+#        title = "Node Size")
+# 
+# # Add the color legend
+# legend("bottomleft", 
+#        legend = c("Low Usage", "High Usage"),
+#        fill = colorRampPalette(c("blue", "red"))(10),
+#        bty = "n",
+#        title = "Node Color")
+
+
+# Plot the graph with captions and legends
+plot(g, vertex.label.color = "black", vertex.color = cols, edge.color = "gray",
+     main = "Pokemon Teammates Network for Flutter Mane",
+     sub = "Channel: Length, Marks: Lines",
+     # vertex.size.legend = list(title = "Usage%", labels = c("Low", "High")),
+     # vertex.color.legend = list(title = "Usage%", at = seq(0, 1, length.out = length(cols)), labels = NULL),
+     # edge.width.legend = list(title = "Weight", at = seq(0, 1, length.out = 5), labels = NULL)
+     )
+```
+
+This code creates a network visualization of the top 20 ranked Pokémon and their teammates for the Pokémon named "Flutter Mane". The visualization shows the connections between the Pokémon and their teammates. Center node represents a Pokémon and others are teammates, and the size of the node is proportional to the Usage% of that Pokémon in battles. The color of the node represents the Usage% of the Pokémon, with blue representing low usage and red representing high usage.
+
+This visualization is useful for understanding the relationships between the top-ranked Pokémon and their teammates, and can provide insights for building a strong Pokémon battle team. It can also help identify patterns in the data that may be difficult to see in a table or spreadsheet format.
+
+
+```{r}
+# load the necessary libraries
+
+
+# create a sample data frame of items and their frequencies
+items <- data.frame(
+  Item = c("Focus Sash", "Choice Specs", "Life Orb", "Booster Energy", "Other"),
+  Freq = c(32.151, 26.383, 24.673, 13.824, 2.969)
+)
+
+# # create a bar chart of the item frequencies
+# bar_chart <- ggplot(items, aes(x = Item, y = Freq, fill = Item)) +
+#   geom_bar(stat = "identity") +
+#   ggtitle("Item Frequencies") +
+#   xlab("Item") +
+#   ylab("Frequency (%)") +
+#   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+# 
+# # create a sorted bar chart of the item frequencies
+# sorted_bar_chart <- items %>%
+#   arrange(desc(Freq)) %>%
+#   ggplot(aes(x = Item, y = Freq, fill = Item)) +
+#   geom_bar(stat = "identity") +
+#   ggtitle("Item Frequencies (sorted)") +
+#   xlab("Item") +
+#   ylab("Frequency (%)") +
+#   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+# create a stacked bar chart of the item frequencies by category
+categories <- c(rep("Common", 3), rep("Uncommon", 1), "Rare")
+item_categories <- data.frame(Item = items$Item, Category = categories, Freq = items$Freq)
+stacked_bar_chart <- ggplot(item_categories, aes(x = Category, y = Freq, fill = Item)) +
+  geom_bar(stat = "identity") +
+  ggtitle("Item Frequencies by for Flutter Mane") +
+  xlab("Category") +
+  ylab("Frequency (%)") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+stacked_bar_chart
+# create a grid of the plots
+#grid.arrange(bar_chart, sorted_bar_chart, stacked_bar_chart, ncol = 2)
+
+
+```
+
+This code creates a stacked bar chart of the item frequencies for the Pokemon "Flutter Mane". The code first creates a sample data frame called "items" with the columns "Item" and "Freq" to represent the name of each item and its frequency. The next step involves creating a new data frame called "item_categories" which adds a third column called "Category" to the "items" data frame. The "Category" column is a factor variable that categorizes each item as "Common", "Uncommon", or "Rare".
+
+The code then uses the ggplot2 library to create a stacked bar chart, with the "Category" variable on the x-axis, the "Freq" variable on the y-axis, and each "Item" represented by a different color within each category. The resulting plot shows the relative frequency of each item in each category.
+
+The code also contains commented-out code that creates two additional bar charts: a basic bar chart of the item frequencies and a sorted bar chart of the item frequencies. These were likely created as exploratory plots before settling on the final stacked bar chart. Finally, the code also includes commented-out code for creating a grid of the plots, but this is not used in the final output.
+
+# Failed Attempts
+
+```{r}
+#| eval: false
+# load the necessary libraries
+
+
+# read in the data from the json file
+data <- fromJSON("gen9vgc2023series2-1630_move.json")
+
+# extract the Items data and sort by frequency
+items <- data.frame(data$Items, stringsAsFactors = FALSE)
+items <- items[order(-as.numeric(gsub("%", "", items$Freq))),]
+
+# select the top 5 items
+top_items <- head(items, 5)
+
+# create a list of ggplot objects for each item
+item_plots <- lapply(seq_along(top_items$Item), function(i) {
+  # extract the item name and frequency
+  item <- top_items$Item[i]
+  freq <- top_items$Freq[i]
+  
+  # create a data frame for the current item
+  item_data <- data.frame(Frequency = c(freq, "Other"), Count = c(freq, 100 - freq))
+  
+  # create a pie chart for the item
+  p <- ggplot(item_data, aes(x = "", y = Count, fill = Frequency)) +
+    geom_bar(stat = "identity", width = 1, color = "white") +
+    coord_polar("y", start = 0) +
+    ggtitle(item) +
+    theme_void() +
+    theme(legend.position = "none")
+  
+  # return the plot object
+  return(p)
+})
+
+# arrange the plots in a grid
+grid.arrange(grobs = item_plots, ncol = 2)
+
+
+```
+::: callout-note
+\> # arrange the plots in a grid
+\> grid.arrange(grobs = item_plots, ncol = 2)
+Error in unit(rep(1, nrow), "null") : 
+  'x' and 'units' must have length > 0
+
+I would like to plot the item distributions but ended up with this error message.
+:::
+
+
+
+
+
+<!-- # Visualization Ideas -->
+<!-- Plot the pokemon in a network visualization: using sizes to amplify the high ranked pm, and the links for their teammates, checkers and counters. Hopefully highlight the teammates interactively when user picks some pms. -->
+
+<!-- Or I will generate an example by pretending to be a user to create a pokemon team from scratch using the visualization. -->
+
+<!-- The purpose of these visualization is to act as a pokemon consult. It will tell you the often used pokemon, and their teammates. -->
+
+<!-- After you choose the team, using visualization to show the potential foes for each pokemon in the team. And for the most dangerous foe, suggest the best counters. -->
+
+<!-- Plot the skills for select pokemons using stacked graph. -->
+
+<!-- Plot the tendencies for the select pokemons in recent years. -->
+
+# Summary
+
+This blog discusses the popular online community of competitive Pokémon players, Smogon, and its battle simulator, Pokémon Showdown. The blog focuses on the development of effective visualizations using the R package igraph and ggplot2 for the comprehensive datasets available in the Smogon databases. Specifically, the blog presents codes for creating a network visualization of the top 20 Pokémon and their teammates and a stacked bar chart of item frequencies for a specific Pokémon, "Flutter Mane." The visualizations provide insights and suggestions for building a successful Pokémon battle team and help identify patterns in the data that may be difficult to see in a table or spreadsheet format. 
+
+Overall, the blog aims to enhance the user's understanding of the data by presenting it in a visually engaging format to facilitate an improved decision-making process and increase the success rate of the user's Pokémon battle team.
+
+
+

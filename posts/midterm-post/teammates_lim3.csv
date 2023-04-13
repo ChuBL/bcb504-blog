@@ -1,0 +1,598 @@
+from,to,weight
+Flutter Mane,Iron Bundle,37.840%
+Flutter Mane,Great Tusk,29.509%
+Flutter Mane,Iron Hands,27.440%
+Iron Bundle,Flutter Mane,50.717%
+Iron Bundle,Great Tusk,41.247%
+Iron Bundle,Iron Hands,26.978%
+Iron Hands,Flutter Mane,46.483%
+Iron Hands,Amoonguss,39.995%
+Iron Hands,Iron Bundle,34.096%
+Great Tusk,Iron Bundle,60.377%
+Great Tusk,Flutter Mane,57.895%
+Great Tusk,Talonflame,36.742%
+Amoonguss,Iron Hands,49.350%
+Amoonguss,Flutter Mane,49.113%
+Amoonguss,Arcanine,41.798%
+Arcanine,Flutter Mane,54.049%
+Arcanine,Amoonguss,45.322%
+Arcanine,Iron Bundle,44.046%
+Gholdengo,Iron Bundle,41.546%
+Gholdengo,Great Tusk,32.249%
+Gholdengo,Flutter Mane,31.450%
+Roaring Moon,Iron Hands,46.216%
+Roaring Moon,Flutter Mane,43.453%
+Roaring Moon,Amoonguss,39.851%
+Kingambit,Flutter Mane,61.237%
+Kingambit,Iron Bundle,39.004%
+Kingambit,Great Tusk,31.982%
+Dragonite,Flutter Mane,56.026%
+Dragonite,Iron Bundle,38.723%
+Dragonite,Great Tusk,31.042%
+Dondozo,Tatsugiri,90.433%
+Dondozo,Flutter Mane,58.395%
+Dondozo,Gholdengo,30.766%
+Armarouge,Indeedee-F,78.279%
+Armarouge,Flutter Mane,39.623%
+Armarouge,Iron Hands,31.404%
+Indeedee-F,Armarouge,78.806%
+Indeedee-F,Flutter Mane,40.499%
+Indeedee-F,Iron Hands,31.289%
+Tatsugiri,Dondozo,93.302%
+Tatsugiri,Flutter Mane,57.845%
+Tatsugiri,Gholdengo,31.197%
+Maushold,Iron Bundle,46.411%
+Maushold,Flutter Mane,42.497%
+Maushold,Annihilape,41.498%
+Talonflame,Great Tusk,65.635%
+Talonflame,Iron Bundle,62.023%
+Talonflame,Flutter Mane,58.421%
+Brute Bonnet,Flutter Mane,48.287%
+Brute Bonnet,Iron Hands,28.642%
+Brute Bonnet,Great Tusk,27.807%
+Tyranitar,Flutter Mane,60.525%
+Tyranitar,Iron Bundle,54.620%
+Tyranitar,Great Tusk,46.553%
+Annihilape,Maushold,53.253%
+Annihilape,Iron Bundle,38.489%
+Annihilape,Flutter Mane,36.379%
+Palafin,Amoonguss,60.194%
+Palafin,Iron Hands,54.313%
+Palafin,Flutter Mane,49.551%
+Torkoal,Flutter Mane,53.442%
+Torkoal,Indeedee-F,38.333%
+Torkoal,Armarouge,36.470%
+Iron Moth,Flutter Mane,69.634%
+Iron Moth,Dondozo,48.251%
+Iron Moth,Tatsugiri,47.947%
+Gothitelle,Flutter Mane,72.673%
+Gothitelle,Iron Bundle,40.969%
+Gothitelle,Great Tusk,35.003%
+Volcarona,Iron Bundle,40.253%
+Volcarona,Flutter Mane,36.190%
+Volcarona,Amoonguss,29.932%
+Garganacl,Iron Bundle,51.709%
+Garganacl,Iron Hands,49.435%
+Garganacl,Flutter Mane,47.786%
+Sylveon,Iron Hands,34.672%
+Sylveon,Iron Bundle,30.806%
+Sylveon,Arcanine,30.795%
+Murkrow,Flutter Mane,55.438%
+Murkrow,Great Tusk,38.723%
+Murkrow,Gholdengo,34.489%
+Grimmsnarl,Flutter Mane,35.790%
+Grimmsnarl,Arcanine,32.485%
+Grimmsnarl,Iron Hands,31.113%
+Baxcalibur,Flutter Mane,44.970%
+Baxcalibur,Iron Hands,40.779%
+Baxcalibur,Amoonguss,38.876%
+Sandy Shocks,Iron Bundle,35.331%
+Sandy Shocks,Flutter Mane,28.924%
+Sandy Shocks,Espathra,25.933%
+Gastrodon,Flutter Mane,42.355%
+Gastrodon,Arcanine,41.335%
+Gastrodon,Roaring Moon,29.535%
+Pelipper,Palafin,69.066%
+Pelipper,Iron Hands,61.358%
+Pelipper,Amoonguss,60.121%
+Garchomp,Flutter Mane,40.443%
+Garchomp,Iron Bundle,36.755%
+Garchomp,Arcanine,23.057%
+Glimmora,Flutter Mane,60.885%
+Glimmora,Kingambit,40.078%
+Glimmora,Iron Bundle,38.965%
+Mimikyu,Iron Bundle,44.447%
+Mimikyu,Iron Hands,35.014%
+Mimikyu,Amoonguss,34.364%
+Meowscarada,Flutter Mane,41.172%
+Meowscarada,Sylveon,29.966%
+Meowscarada,Gholdengo,23.192%
+Ceruledge,Flutter Mane,48.538%
+Ceruledge,Iron Bundle,46.426%
+Ceruledge,Maushold,39.377%
+Scream Tail,Flutter Mane,51.281%
+Scream Tail,Gothitelle,43.114%
+Scream Tail,Arcanine,40.637%
+Hatterene,Torkoal,68.885%
+Hatterene,Armarouge,59.154%
+Hatterene,Indeedee-F,58.783%
+Farigiraf,Iron Hands,40.406%
+Farigiraf,Torkoal,37.436%
+Farigiraf,Flutter Mane,28.032%
+Corviknight,Arcanine,36.464%
+Corviknight,Iron Hands,33.250%
+Corviknight,Flutter Mane,30.144%
+Scizor,Flutter Mane,53.251%
+Scizor,Roaring Moon,34.615%
+Scizor,Sylveon,28.432%
+Abomasnow,Iron Bundle,72.625%
+Abomasnow,Iron Hands,31.189%
+Abomasnow,Indeedee-F,26.650%
+Rotom-Wash,Flutter Mane,45.183%
+Rotom-Wash,Great Tusk,29.945%
+Rotom-Wash,Amoonguss,26.013%
+Iron Jugulis,Amoonguss,36.422%
+Iron Jugulis,Iron Hands,29.965%
+Iron Jugulis,Iron Bundle,29.542%
+Lycanroc,Tyranitar,86.998%
+Lycanroc,Flutter Mane,54.155%
+Lycanroc,Indeedee-F,38.083%
+Hydreigon,Iron Bundle,36.482%
+Hydreigon,Flutter Mane,30.770%
+Hydreigon,Iron Hands,23.886%
+Azumarill,Flutter Mane,47.649%
+Azumarill,Armarouge,44.992%
+Azumarill,Gholdengo,35.387%
+Pawmot,Tatsugiri,71.640%
+Pawmot,Dondozo,71.580%
+Pawmot,Talonflame,54.644%
+Espathra,Sandy Shocks,78.466%
+Espathra,Iron Bundle,48.773%
+Espathra,Talonflame,26.685%
+Gyarados,Flutter Mane,55.983%
+Gyarados,Amoonguss,40.059%
+Gyarados,Iron Hands,36.259%
+Salamence,Flutter Mane,42.038%
+Salamence,Iron Hands,35.124%
+Salamence,Amoonguss,30.901%
+Dragapult,Iron Hands,26.618%
+Dragapult,Iron Bundle,24.896%
+Dragapult,Amoonguss,20.239%
+Oranguru,Torkoal,67.307%
+Oranguru,Iron Hands,52.875%
+Oranguru,Brute Bonnet,43.333%
+Sableye,Flutter Mane,32.782%
+Sableye,Iron Hands,31.738%
+Sableye,Iron Bundle,29.679%
+Skeledirge,Kingambit,29.420%
+Skeledirge,Amoonguss,26.344%
+Skeledirge,Flutter Mane,25.177%
+Iron Valiant,Iron Bundle,25.366%
+Iron Valiant,Armarouge,21.287%
+Iron Valiant,Arcanine,16.910%
+Tauros-Paldea-Aqua,Flutter Mane,49.730%
+Tauros-Paldea-Aqua,Amoonguss,30.408%
+Tauros-Paldea-Aqua,Gholdengo,24.567%
+Iron Treads,Flutter Mane,53.091%
+Iron Treads,Murkrow,38.667%
+Iron Treads,Armarouge,36.414%
+Gardevoir,Maushold,39.545%
+Gardevoir,Iron Bundle,29.873%
+Gardevoir,Kingambit,26.386%
+Lilligant,Torkoal,90.598%
+Lilligant,Flutter Mane,52.973%
+Lilligant,Kingambit,43.151%
+Gallade,Indeedee-F,30.454%
+Gallade,Iron Bundle,27.584%
+Gallade,Arcanine,26.944%
+Houndstone,Tyranitar,78.459%
+Houndstone,Talonflame,38.487%
+Houndstone,Iron Bundle,34.866%
+Vivillon,Ceruledge,58.970%
+Vivillon,Iron Bundle,57.586%
+Vivillon,Maushold,55.276%
+Hariyama,Torkoal,57.866%
+Hariyama,Armarouge,42.769%
+Hariyama,Indeedee-F,42.742%
+Klefki,Iron Bundle,53.404%
+Klefki,Garchomp,34.890%
+Klefki,Volcarona,34.617%
+Tinkaton,Iron Bundle,31.656%
+Tinkaton,Gholdengo,26.689%
+Tinkaton,Amoonguss,26.177%
+Rotom-Heat,Iron Bundle,35.939%
+Rotom-Heat,Flutter Mane,32.064%
+Rotom-Heat,Brute Bonnet,29.235%
+Tauros-Paldea-Blaze,Flutter Mane,42.237%
+Tauros-Paldea-Blaze,Iron Bundle,34.397%
+Tauros-Paldea-Blaze,Amoonguss,30.206%
+Flamigo,Dondozo,47.508%
+Flamigo,Tatsugiri,47.359%
+Flamigo,Gholdengo,45.371%
+Arboliva,Torkoal,32.722%
+Arboliva,Grimmsnarl,27.834%
+Arboliva,Iron Hands,25.351%
+Slither Wing,Brute Bonnet,27.425%
+Slither Wing,Roaring Moon,27.031%
+Slither Wing,Torkoal,24.853%
+Umbreon,Iron Hands,41.216%
+Umbreon,Flutter Mane,39.244%
+Umbreon,Gholdengo,30.330%
+Florges,Arcanine,53.632%
+Florges,Kingambit,47.607%
+Florges,Gastrodon,38.783%
+Kilowattrel,Great Tusk,28.705%
+Kilowattrel,Brute Bonnet,23.280%
+Kilowattrel,Roaring Moon,21.171%
+Stonjourner,Flutter Mane,68.623%
+Stonjourner,Iron Hands,42.979%
+Stonjourner,Brute Bonnet,39.350%
+Breloom,Flutter Mane,34.311%
+Breloom,Roaring Moon,30.089%
+Breloom,Iron Bundle,26.117%
+Cetitan,Abomasnow,80.347%
+Cetitan,Roaring Moon,28.763%
+Cetitan,Iron Bundle,23.970%
+Staraptor,Iron Hands,45.400%
+Staraptor,Scream Tail,35.672%
+Staraptor,Gothitelle,34.886%
+Bellibolt,Flutter Mane,63.363%
+Bellibolt,Great Tusk,60.141%
+Bellibolt,Arcanine,54.510%
+Bronzong,Flutter Mane,34.887%
+Bronzong,Iron Hands,33.211%
+Bronzong,Iron Bundle,22.332%
+Mudsdale,Iron Hands,46.904%
+Mudsdale,Torkoal,40.249%
+Mudsdale,Armarouge,30.162%
+Pincurchin,Iron Hands,51.272%
+Pincurchin,Iron Bundle,46.461%
+Pincurchin,Iron Treads,21.545%
+Drifblim,Armarouge,62.686%
+Drifblim,Indeedee-F,45.264%
+Drifblim,Indeedee,33.560%
+Dachsbun,Armarouge,88.048%
+Dachsbun,Indeedee-F,82.530%
+Dachsbun,Torkoal,69.227%
+Iron Thorns,Armarouge,25.792%
+Iron Thorns,Flutter Mane,22.807%
+Iron Thorns,Iron Bundle,20.700%
+Jumpluff,Flutter Mane,80.344%
+Jumpluff,Torkoal,73.301%
+Jumpluff,Great Tusk,50.996%
+Indeedee,Kingambit,42.411%
+Indeedee,Armarouge,42.292%
+Indeedee,Drifblim,38.510%
+Zoroark,Garganacl,58.427%
+Zoroark,Mimikyu,55.962%
+Zoroark,Baxcalibur,50.305%
+Coalossal,Dragapult,50.489%
+Coalossal,Iron Bundle,37.386%
+Coalossal,Flutter Mane,28.291%
+Orthworm,Flutter Mane,46.044%
+Orthworm,Great Tusk,42.704%
+Orthworm,Talonflame,22.675%
+Quaquaval,Flutter Mane,36.421%
+Quaquaval,Great Tusk,34.430%
+Quaquaval,Amoonguss,33.009%
+Gengar,Iron Bundle,37.128%
+Gengar,Garchomp,24.584%
+Gengar,Corviknight,19.707%
+Vaporeon,Amoonguss,47.044%
+Vaporeon,Iron Hands,46.690%
+Vaporeon,Flutter Mane,39.642%
+Floatzel,Pelipper,85.936%
+Floatzel,Amoonguss,35.116%
+Floatzel,Kingambit,22.827%
+Hippowdon,Lycanroc,63.309%
+Hippowdon,Iron Bundle,61.447%
+Hippowdon,Iron Hands,56.078%
+Tsareena,Iron Bundle,67.491%
+Tsareena,Talonflame,57.669%
+Tsareena,Hydreigon,50.037%
+Drednaw,Pelipper,88.223%
+Drednaw,Iron Hands,40.051%
+Drednaw,Iron Bundle,30.746%
+Barraskewda,Pelipper,76.511%
+Barraskewda,Kingambit,37.587%
+Barraskewda,Great Tusk,25.330%
+Magnezone,Flutter Mane,35.296%
+Magnezone,Amoonguss,32.216%
+Magnezone,Iron Bundle,29.751%
+Luxray,Palafin,59.262%
+Luxray,Gholdengo,39.112%
+Luxray,Flamigo,32.672%
+Slowking,Iron Hands,34.828%
+Slowking,Flutter Mane,29.467%
+Slowking,Arcanine,24.151%
+Grafaiai,Flutter Mane,34.659%
+Grafaiai,Palafin,28.370%
+Grafaiai,Amoonguss,28.088%
+Hawlucha,Indeedee-F,66.912%
+Hawlucha,Tyranitar,55.043%
+Hawlucha,Flutter Mane,51.403%
+Greedent,Brute Bonnet,89.756%
+Greedent,Iron Bundle,88.623%
+Greedent,Dondozo,88.216%
+Brambleghast,Talonflame,46.483%
+Brambleghast,Great Tusk,45.780%
+Brambleghast,Flutter Mane,45.017%
+Toedscruel,Iron Hands,23.537%
+Toedscruel,Flutter Mane,22.135%
+Toedscruel,Great Tusk,21.163%
+Toxtricity,Flutter Mane,34.923%
+Toxtricity,Sableye,25.347%
+Toxtricity,Kingambit,20.965%
+Toxapex,Garganacl,60.726%
+Toxapex,Arcanine,54.625%
+Toxapex,Arboliva,25.837%
+Lucario,Flutter Mane,33.142%
+Lucario,Amoonguss,23.731%
+Lucario,Roaring Moon,20.906%
+Scovillain,Torkoal,76.789%
+Scovillain,Flutter Mane,57.893%
+Scovillain,Roaring Moon,32.909%
+Medicham,Torkoal,34.490%
+Medicham,Farigiraf,34.074%
+Medicham,Sandy Shocks,31.458%
+Rotom-Mow,Arcanine,40.899%
+Rotom-Mow,Kingambit,32.422%
+Rotom-Mow,Flutter Mane,28.748%
+Clodsire,Flutter Mane,28.781%
+Clodsire,Kingambit,24.636%
+Clodsire,Iron Hands,19.536%
+Pachirisu,Flutter Mane,24.701%
+Pachirisu,Armarouge,22.864%
+Pachirisu,Torkoal,22.579%
+Tropius,Flutter Mane,65.898%
+Tropius,Tatsugiri,54.737%
+Tropius,Dondozo,54.638%
+Raichu,Pelipper,49.813%
+Raichu,Palafin,43.040%
+Raichu,Gholdengo,34.942%
+Clawitzer,Indeedee-F,70.192%
+Clawitzer,Armarouge,67.026%
+Clawitzer,Iron Hands,38.559%
+Rabsca,Iron Hands,57.274%
+Rabsca,Torkoal,51.751%
+Rabsca,Armarouge,40.312%
+Bisharp,Arcanine,46.254%
+Bisharp,Iron Bundle,35.029%
+Bisharp,Klefki,33.332%
+Eelektross,Flutter Mane,36.503%
+Eelektross,Tyranitar,35.873%
+Eelektross,Garchomp,32.531%
+Salazzle,Flutter Mane,52.195%
+Salazzle,Roaring Moon,33.651%
+Salazzle,Amoonguss,32.175%
+Slowbro,Iron Hands,42.203%
+Slowbro,Gastrodon,35.934%
+Slowbro,Maushold,23.852%
+Goodra,Pelipper,24.721%
+Goodra,Meowscarada,23.911%
+Goodra,Flutter Mane,23.351%
+Frosmoth,Iron Hands,24.852%
+Frosmoth,Slither Wing,19.470%
+Frosmoth,Volcarona,19.041%
+Misdreavus,Iron Hands,60.321%
+Misdreavus,Flutter Mane,51.230%
+Misdreavus,Roaring Moon,46.234%
+Jolteon,Armarouge,76.165%
+Jolteon,Mudsdale,75.408%
+Jolteon,Iron Valiant,64.238%
+Blissey,Iron Hands,78.292%
+Blissey,Annihilape,75.610%
+Blissey,Farigiraf,73.367%
+Dudunsparce,Flutter Mane,38.043%
+Dudunsparce,Iron Hands,32.706%
+Dudunsparce,Maushold,29.113%
+Glaceon,Abomasnow,42.491%
+Glaceon,Slowking,38.372%
+Glaceon,Iron Bundle,19.878%
+Krookodile,Flutter Mane,34.071%
+Krookodile,Meowscarada,23.013%
+Krookodile,Murkrow,18.895%
+Braviary,Flutter Mane,56.005%
+Braviary,Baxcalibur,30.508%
+Braviary,Iron Hands,23.139%
+Dragalge,Iron Hands,57.477%
+Dragalge,Great Tusk,55.904%
+Dragalge,Iron Bundle,54.356%
+Spiritomb,Iron Hands,53.249%
+Spiritomb,Torkoal,30.947%
+Spiritomb,Kingambit,27.589%
+Cloyster,Armarouge,71.484%
+Cloyster,Indeedee-F,68.934%
+Cloyster,Annihilape,44.674%
+Leafeon,Torkoal,91.787%
+Leafeon,Flutter Mane,85.318%
+Leafeon,Great Tusk,57.783%
+Houndoom,Bronzong,34.864%
+Houndoom,Grimmsnarl,30.273%
+Houndoom,Flutter Mane,28.006%
+Pyroar,Kingambit,82.898%
+Pyroar,Garchomp,82.316%
+Pyroar,Flutter Mane,82.254%
+Muk,Iron Hands,39.633%
+Muk,Glimmora,37.875%
+Muk,Hippowdon,37.875%
+Avalugg,Torkoal,68.327%
+Avalugg,Brute Bonnet,63.923%
+Avalugg,Roaring Moon,61.864%
+Rotom-Fan,Gothitelle,65.102%
+Rotom-Fan,Flutter Mane,63.247%
+Rotom-Fan,Garchomp,61.580%
+Cyclizar,Gothitelle,31.359%
+Cyclizar,Flutter Mane,28.686%
+Cyclizar,Scream Tail,27.282%
+Toxicroak,Pelipper,59.944%
+Toxicroak,Floatzel,43.187%
+Toxicroak,Amoonguss,37.126%
+Revavroom,Flutter Mane,35.603%
+Revavroom,Brute Bonnet,25.687%
+Revavroom,Iron Hands,21.509%
+Honchkrow,Great Tusk,36.113%
+Honchkrow,Iron Bundle,30.008%
+Honchkrow,Talonflame,29.832%
+Slaking,Grafaiai,49.487%
+Slaking,Flutter Mane,46.502%
+Slaking,Amoonguss,32.664%
+Cryogonal,Kingambit,53.473%
+Cryogonal,Rotom-Wash,53.201%
+Cryogonal,Garchomp,49.812%
+Electrode,Arboliva,34.915%
+Electrode,Slowking,27.723%
+Electrode,Glaceon,27.713%
+Camerupt,Maushold,54.559%
+Camerupt,Abomasnow,52.763%
+Camerupt,Oranguru,51.443%
+Altaria,Flutter Mane,50.840%
+Altaria,Grimmsnarl,36.474%
+Altaria,Iron Moth,34.319%
+Lumineon,Flutter Mane,50.997%
+Lumineon,Gogoat,44.258%
+Lumineon,Iron Treads,37.031%
+Crabominable,Indeedee-F,70.218%
+Crabominable,Armarouge,68.702%
+Crabominable,Torkoal,45.028%
+Chansey,Annihilape,66.501%
+Chansey,Amoonguss,56.514%
+Chansey,Gyarados,29.097%
+Ditto,Flutter Mane,32.797%
+Ditto,Armarouge,27.028%
+Ditto,Amoonguss,26.379%
+Gogoat,Flutter Mane,71.172%
+Gogoat,Lumineon,51.487%
+Gogoat,Iron Moth,41.528%
+Morgrem,Amoonguss,89.908%
+Morgrem,Volcarona,89.908%
+Morgrem,Salamence,89.908%
+Lycanroc-Dusk,Roaring Moon,63.731%
+Lycanroc-Dusk,Dragapult,62.051%
+Lycanroc-Dusk,Farigiraf,60.981%
+Grumpig,Flutter Mane,69.335%
+Grumpig,Iron Bundle,62.231%
+Grumpig,Amoonguss,60.119%
+Haxorus,Flutter Mane,32.857%
+Haxorus,Talonflame,27.906%
+Haxorus,Iron Bundle,25.610%
+Lokix,Volcarona,50.408%
+Lokix,Rotom-Wash,31.993%
+Lokix,Flutter Mane,31.502%
+Bombirdier,Great Tusk,42.122%
+Bombirdier,Arcanine,29.056%
+Bombirdier,Kilowattrel,24.740%
+Oricorio-Pom-Pom,Volcarona,80.968%
+Oricorio-Pom-Pom,Great Tusk,34.425%
+Oricorio-Pom-Pom,Grimmsnarl,27.054%
+Rotom-Frost,Abomasnow,73.377%
+Rotom-Frost,Iron Bundle,42.822%
+Rotom-Frost,Gholdengo,28.582%
+Noivern,Gholdengo,34.477%
+Noivern,Annihilape,23.263%
+Noivern,Flutter Mane,22.211%
+Copperajah,Torkoal,65.100%
+Copperajah,Indeedee-F,55.666%
+Copperajah,Armarouge,52.348%
+Stantler,Arboliva,43.897%
+Stantler,Slowking,43.897%
+Stantler,Glaceon,43.897%
+Oricorio-Sensu,Volcarona,79.806%
+Oricorio-Sensu,Great Tusk,50.182%
+Oricorio-Sensu,Lilligant,33.274%
+Beartic,Pelipper,74.760%
+Beartic,Flutter Mane,45.841%
+Beartic,Iron Hands,35.826%
+Bruxish,Flamigo,49.138%
+Bruxish,Coalossal,48.449%
+Bruxish,Great Tusk,30.590%
+Ursaring,Amoonguss,46.045%
+Ursaring,Arcanine,24.701%
+Ursaring,Armarouge,22.868%
+Flapple,Sandy Shocks,69.067%
+Flapple,Iron Bundle,60.421%
+Flapple,Espathra,59.268%
+Weavile,Iron Hands,40.801%
+Weavile,Amoonguss,34.580%
+Weavile,Pelipper,32.212%
+Masquerain,Torkoal,35.435%
+Masquerain,Iron Hands,35.253%
+Masquerain,Iron Moth,35.027%
+Palossand,Iron Bundle,39.587%
+Palossand,Espathra,35.419%
+Palossand,Sandy Shocks,34.835%
+Mabosstiff,Gholdengo,54.031%
+Mabosstiff,Iron Hands,47.212%
+Mabosstiff,Dondozo,31.007%
+Donphan,Flutter Mane,47.678%
+Donphan,Magnezone,46.380%
+Donphan,Iron Moth,43.265%
+Appletun,Flutter Mane,39.829%
+Appletun,Garganacl,23.524%
+Appletun,Arcanine,22.739%
+Espeon,Umbreon,23.863%
+Espeon,Vaporeon,20.779%
+Espeon,Flareon,20.757%
+Qwilfish,Iron Hands,78.671%
+Qwilfish,Pelipper,65.329%
+Qwilfish,Palafin,62.058%
+Golduck,Pelipper,84.676%
+Golduck,Kingambit,49.898%
+Golduck,Sylveon,28.529%
+Scyther,Gengar,36.210%
+Scyther,Pelipper,29.766%
+Scyther,Drednaw,28.893%
+Gothorita,Scream Tail,43.753%
+Gothorita,Flutter Mane,39.391%
+Gothorita,Gothitelle,38.894%
+Heracross,Iron Bundle,40.953%
+Heracross,Flutter Mane,30.416%
+Heracross,Kingambit,29.498%
+Pikachu,Arcanine,45.170%
+Pikachu,Pelipper,31.240%
+Pikachu,Annihilape,25.214%
+Veluza,Great Tusk,70.931%
+Veluza,Kingambit,67.389%
+Veluza,Flutter Mane,64.969%
+Froslass,Abomasnow,44.508%
+Froslass,Iron Bundle,30.379%
+Froslass,Arcanine,30.269%
+Squawkabilly,Iron Hands,36.448%
+Squawkabilly,Maushold,31.631%
+Squawkabilly,Gholdengo,29.146%
+Sandaconda,Tyranitar,78.871%
+Sandaconda,Indeedee-F,67.083%
+Sandaconda,Armarouge,63.072%
+Alomomola,Amoonguss,37.177%
+Alomomola,Flutter Mane,35.955%
+Alomomola,Roaring Moon,35.819%
+Magneton,Amoonguss,70.204%
+Magneton,Great Tusk,41.259%
+Magneton,Baxcalibur,37.923%
+Lurantis,Iron Hands,43.718%
+Lurantis,Mimikyu,33.542%
+Lurantis,Armarouge,29.675%
+Sneasel,Annihilape,77.461%
+Sneasel,Amoonguss,76.646%
+Sneasel,Maushold,76.010%
+Slowpoke,Torkoal,88.455%
+Slowpoke,Gastrodon,57.215%
+Slowpoke,Indeedee-F,51.164%
+Polteageist,Amoonguss,42.304%
+Polteageist,Iron Hands,29.707%
+Polteageist,Palafin,25.788%
+Klawf,Indeedee-F,28.408%
+Klawf,Amoonguss,25.522%
+Klawf,Mimikyu,25.456%
+Delibird,Iron Hands,80.849%
+Delibird,Iron Bundle,61.656%
+Delibird,Roaring Moon,61.105%
+Skuntank,Mimikyu,30.660%
+Skuntank,Garganacl,28.491%
+Skuntank,Annihilape,25.724%
+Dugtrio,Scream Tail,51.033%
+Dugtrio,Murkrow,48.862%
+Dugtrio,Armarouge,38.998%
+Toedscool,Skeledirge,64.152%
+Toedscool,Meowscarada,61.304%
+Toedscool,Hydreigon,61.203%
