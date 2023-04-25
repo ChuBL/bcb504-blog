@@ -1,13 +1,13 @@
 ---
-title: "BCB 520 - Midterm Pokemon Portfolio Post"
+title: "From Midterms to Championships: Hopw to Build Winning Pokémon Teams"
 author: "Jiyin Zhang"
-subtitle: "Road to Masters"
+subtitle: "Insightful Visualizations of Pokémon Showdown Battle Data"
 date: "2023-03-30"
-categories: [Assignment, DataViz, Smogon, Pokemon Showdown]
+categories: [Assignment, DataViz, Smogon, Pokémon Showdown]
 image: image_j28MHAY0_1680213973861_raw.jpeg
 code-fold: true
 code-tools: true
-description: "Zapping Through the 10,000,000 Pokemon Battles"
+description: "Zapping Through the 10,000,000 Pokémon Battles"
 format: html
 ---
 # PREAMBLE
@@ -26,11 +26,11 @@ library(jsonlite)
 
 <p style="color:red">POKEMONS.</p>
 
-Smogon is a popular online community of competitive Pokémon players that was founded in 2004. The community focuses on the competitive side of Pokémon battling, providing resources such as guides, forums, and a tier system that classifies Pokémon based on their power level. Smogon's tier system is used by many competitive players to build their teams and strategies. The community also hosts tournaments and events for players to compete in.
+[Smogon](https://www.smogon.com/) is a popular online community of competitive Pokémon players that was founded in 2004. The community focuses on the competitive side of Pokémon battling, providing resources such as guides, forums, and a tier system that classifies Pokémon based on their power level. Smogon's tier system is used by many competitive players to build their teams and strategies. The community also hosts tournaments and events for players to compete in.
 
-Pokemon Showdown is an online battle simulator created by Smogon that allows players to build and battle with Pokémon teams in a virtual environment. It is widely used by the competitive Pokémon community and is an important tool for testing and refining strategies. Players can customize their teams with specific moves, items, and abilities, and then battle against other players in real-time.
+[Pokemon Showdown](https://pokemonshowdown.com/) is an online battle simulator created by Smogon that allows players to build and battle with Pokémon teams in a virtual environment. It is widely used by the competitive Pokémon community and is an important tool for testing and refining strategies. Players can customize their teams with specific moves, items, and abilities, and then battle against other players in real-time.
 
-The objective of this study is to develop effective visualizations for the comprehensive datasets available in the Smogon databases. The aim is to present the Pokemon battle data in a clear and intuitive manner using visual plots. Through the use of such visualizations, we aim to provide valuable insights and suggestions to users on how to build a successful Pokemon battle team. Our approach seeks to enhance the user's understanding of the data by presenting it in a visually engaging format, thereby enabling them to make informed decisions when building their team. The ultimate goal is to offer an optimized user experience that facilitates an improved decision-making process and increases the success rate of the user's Pokemon battle team.
+The objective of this study is to develop effective visualizations for the comprehensive datasets available in the Smogon databases. The aim is to present the Pokemon battle data in a clear and intuitive manner using visual plots. Through the use of such visualizations, I aim to provide valuable insights and suggestions to users on how to build a successful Pokemon battle team. Our approach seeks to enhance the user's understanding of the data by presenting it in a visually engaging format, thereby enabling them to make informed decisions when building their team. The ultimate goal is to offer an optimized user experience that facilitates an improved decision-making process and increases the success rate of the user's Pokemon battle team.
 
 
 
@@ -110,16 +110,13 @@ if __name__ == "__main__":
     batch_download_by_year(2023)
 ```
 
-<!-- I managed to grab a huge bunch of data from the Smogon forum since it is hard to collect similar Pokemon battle data from official websites, except for some crazy poke fans who can manually recognize and record the Pokemon ranking information and player teams from the official competition videos.  -->
+> I managed to grab a huge bunch of data from the Smogon forum since it is hard to collect similar Pokemon battle data from official websites, except for some crazy poke fans who can manually recognize and record the Pokemon ranking information and player teams from the official competition videos.
+The collected data can be accessed from this [source](https://www.smogon.com/stats/). My local data collection is managed accordingly to the file hierarchy of this straightforward website.
+My current work focuses on the data recorded in 2023. The Pokemon battle data are stored in `.txt` and `.json` formats. I am working on reading some forum threads about the data discussion and explanations. The next plan is to convert the interesting part of the data into an R data frame and end up with visualizations.
 
 <!-- I am unfamiliar with some Pokemon names and skills in English, which inevitably lowers my efficiency in parsing the data. At the same time, the good news is the dataset size is overwhelming, which means I don't have to bother particular Pokemons but the whole tendency patterns. -->
 
-<!-- The collected data can be accessed from this [source](https://www.smogon.com/stats/). My local data collection is managed accordingly to the file hierarchy of this straightforward website. -->
-
-
-<!-- My current work focuses on the data recorded in 2023. The Pokemon battle data are stored in `.txt` and `.json` formats. I am working on reading some forum threads about the data discussion and explanations. The next plan is to convert the interesting part of the data into an R data frame and end up with visualizations. -->
-
-We applied the dataset called `gen9vgc2023series2-1630` for this pokemon battle research. 
+I applied the dataset called `gen9vgc2023series2-1630` for this pokemon battle research. 
 
 **gen9** stands for the 9th generation of pokemon of Scarlet & Violet. The games will feature a brand new open-world region, three original starters, and new Legendaries for players to discover. 
 
@@ -169,8 +166,9 @@ V(g)$label <- top_20_pokemon$Pokemon
 E(g)$width <- as.numeric(substr(edge_data$weight, 1, nchar(edge_data$weight) - 1)) / 100
 ```
 
-```{r}
+```{r my-plot, out.width = "10in", out.height = "8in"}
 # Plot the graph
+layout <- layout_as_tree(g)
 suppressWarnings({
 plot(g,
      vertex.label.cex = 0.8, # Adjust the font size of vertex labels
@@ -180,9 +178,12 @@ plot(g,
      vertex.color = "lightblue",
      edge.arrow.size = 0,
      edge.color = "gray",
-     layout = layout_with_fr(g, niter = 2000) # Set the layout algorithm
-)
+     #layout = layout_with_fr(g, niter = 2000) # Set the layout algorithm
+     layout = layout
+     )
+title(main = "The top 20 Pokemon and their teammates")
 })
+
 
 ```
 
@@ -208,8 +209,12 @@ ggplot(data = teammates, aes(x = Name, y = Usage)) +
 
 ```
 
-Usage Percentages of Teammates for Flutter Mane, ordered by the usage percentages.
+Usage Percentages of Teammates for **Flutter Mane**, ordered by the usage percentages.
 
+<figure style="text-align:center">
+<img src="0987Flutter_Mane.png" alt="Flutter Mane" width="400"/>
+<figcaption>Flutter Mane</figcaption>
+</figure>
 
 ```{r}
 
@@ -231,7 +236,7 @@ V(g)$size <- 20
 E(g)$width <- 1/100 * E(g)$weight
 
 # set size of nodes based on Usage% from top_20_pokemon
-size <- top_20_pokemon$`Usage%` * 1000
+size <- top_20_pokemon$`Usage%`/1000
 
 # color nodes based on Usage%
 cols <- colorRampPalette(c("blue", "red"))(length(size))
