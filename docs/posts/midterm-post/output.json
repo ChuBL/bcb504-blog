@@ -1,0 +1,1091 @@
+{
+  "nodes": [
+    {
+      "id": "Flutter Mane",
+      "group": 1
+    },
+    {
+      "id": "Iron Bundle",
+      "group": 2
+    },
+    {
+      "id": "Great Tusk",
+      "group": 3
+    },
+    {
+      "id": "Iron Hands",
+      "group": 4
+    },
+    {
+      "id": "Arcanine",
+      "group": 5
+    },
+    {
+      "id": "Amoonguss",
+      "group": 6
+    },
+    {
+      "id": "Kingambit",
+      "group": 7
+    },
+    {
+      "id": "Dondozo",
+      "group": 8
+    },
+    {
+      "id": "Dragonite",
+      "group": 9
+    },
+    {
+      "id": "Talonflame",
+      "group": 10
+    },
+    {
+      "id": "Tatsugiri",
+      "group": 11
+    },
+    {
+      "id": "Roaring Moon",
+      "group": 12
+    },
+    {
+      "id": "Gholdengo",
+      "group": 13
+    },
+    {
+      "id": "Maushold",
+      "group": 14
+    },
+    {
+      "id": "Tyranitar",
+      "group": 15
+    },
+    {
+      "id": "Palafin",
+      "group": 16
+    },
+    {
+      "id": "Armarouge",
+      "group": 17
+    },
+    {
+      "id": "Indeedee-F",
+      "group": 18
+    },
+    {
+      "id": "Brute Bonnet",
+      "group": 19
+    },
+    {
+      "id": "Torkoal",
+      "group": 20
+    }
+  ],
+  "links": [
+    {
+      "source": "Flutter Mane",
+      "target": "Iron Bundle",
+      "value": 37
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Great Tusk",
+      "value": 29
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Iron Hands",
+      "value": 27
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Arcanine",
+      "value": 23
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Amoonguss",
+      "value": 23
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Kingambit",
+      "value": 19
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Dondozo",
+      "value": 17
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Dragonite",
+      "value": 17
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Talonflame",
+      "value": 16
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Tatsugiri",
+      "value": 16
+    },
+    {
+      "source": "Flutter Mane",
+      "target": "Roaring Moon",
+      "value": 14
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Flutter Mane",
+      "value": 50
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Great Tusk",
+      "value": 41
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Iron Hands",
+      "value": 26
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Arcanine",
+      "value": 26
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Amoonguss",
+      "value": 24
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Talonflame",
+      "value": 23
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Gholdengo",
+      "value": 22
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Maushold",
+      "value": 18
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Roaring Moon",
+      "value": 17
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Kingambit",
+      "value": 16
+    },
+    {
+      "source": "Iron Bundle",
+      "target": "Tyranitar",
+      "value": 16
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Flutter Mane",
+      "value": 46
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Amoonguss",
+      "value": 39
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Iron Bundle",
+      "value": 34
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Arcanine",
+      "value": 31
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Roaring Moon",
+      "value": 26
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Palafin",
+      "value": 19
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Gholdengo",
+      "value": 17
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Armarouge",
+      "value": 15
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Indeedee-F",
+      "value": 15
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Brute Bonnet",
+      "value": 12
+    },
+    {
+      "source": "Iron Hands",
+      "target": "Dragonite",
+      "value": 12
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Iron Bundle",
+      "value": 60
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Flutter Mane",
+      "value": 57
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Talonflame",
+      "value": 36
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Gholdengo",
+      "value": 25
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Tyranitar",
+      "value": 20
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Kingambit",
+      "value": 19
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Dragonite",
+      "value": 18
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Maushold",
+      "value": 16
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Amoonguss",
+      "value": 14
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Brute Bonnet",
+      "value": 13
+    },
+    {
+      "source": "Great Tusk",
+      "target": "Torkoal",
+      "value": 13
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Iron Hands",
+      "value": 49
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Flutter Mane",
+      "value": 49
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Arcanine",
+      "value": 41
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Iron Bundle",
+      "value": 38
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Roaring Moon",
+      "value": 28
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Palafin",
+      "value": 26
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Gholdengo",
+      "value": 18
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Kingambit",
+      "value": 15
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Dragonite",
+      "value": 15
+    },
+    {
+      "source": "Amoonguss",
+      "target": "Great Tusk",
+      "value": 15
+    },
+    {
+      "source": "Arcanine",
+      "target": "Flutter Mane",
+      "value": 54
+    },
+    {
+      "source": "Arcanine",
+      "target": "Amoonguss",
+      "value": 45
+    },
+    {
+      "source": "Arcanine",
+      "target": "Iron Bundle",
+      "value": 44
+    },
+    {
+      "source": "Arcanine",
+      "target": "Iron Hands",
+      "value": 42
+    },
+    {
+      "source": "Arcanine",
+      "target": "Roaring Moon",
+      "value": 29
+    },
+    {
+      "source": "Arcanine",
+      "target": "Palafin",
+      "value": 18
+    },
+    {
+      "source": "Arcanine",
+      "target": "Gholdengo",
+      "value": 15
+    },
+    {
+      "source": "Arcanine",
+      "target": "Great Tusk",
+      "value": 14
+    },
+    {
+      "source": "Arcanine",
+      "target": "Dragonite",
+      "value": 13
+    },
+    {
+      "source": "Arcanine",
+      "target": "Kingambit",
+      "value": 12
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Iron Bundle",
+      "value": 41
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Great Tusk",
+      "value": 32
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Flutter Mane",
+      "value": 31
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Iron Hands",
+      "value": 26
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Talonflame",
+      "value": 22
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Dondozo",
+      "value": 22
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Tatsugiri",
+      "value": 22
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Amoonguss",
+      "value": 22
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Maushold",
+      "value": 19
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Roaring Moon",
+      "value": 17
+    },
+    {
+      "source": "Gholdengo",
+      "target": "Dragonite",
+      "value": 17
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Iron Hands",
+      "value": 46
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Flutter Mane",
+      "value": 43
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Amoonguss",
+      "value": 39
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Arcanine",
+      "value": 38
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Iron Bundle",
+      "value": 38
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Gholdengo",
+      "value": 21
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Maushold",
+      "value": 14
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Great Tusk",
+      "value": 14
+    },
+    {
+      "source": "Roaring Moon",
+      "target": "Palafin",
+      "value": 13
+    },
+    {
+      "source": "Kingambit",
+      "target": "Flutter Mane",
+      "value": 61
+    },
+    {
+      "source": "Kingambit",
+      "target": "Iron Bundle",
+      "value": 39
+    },
+    {
+      "source": "Kingambit",
+      "target": "Great Tusk",
+      "value": 31
+    },
+    {
+      "source": "Kingambit",
+      "target": "Amoonguss",
+      "value": 23
+    },
+    {
+      "source": "Kingambit",
+      "target": "Dragonite",
+      "value": 22
+    },
+    {
+      "source": "Kingambit",
+      "target": "Arcanine",
+      "value": 17
+    },
+    {
+      "source": "Kingambit",
+      "target": "Armarouge",
+      "value": 17
+    },
+    {
+      "source": "Kingambit",
+      "target": "Dondozo",
+      "value": 17
+    },
+    {
+      "source": "Kingambit",
+      "target": "Indeedee-F",
+      "value": 16
+    },
+    {
+      "source": "Kingambit",
+      "target": "Tatsugiri",
+      "value": 16
+    },
+    {
+      "source": "Kingambit",
+      "target": "Talonflame",
+      "value": 14
+    },
+    {
+      "source": "Dragonite",
+      "target": "Flutter Mane",
+      "value": 56
+    },
+    {
+      "source": "Dragonite",
+      "target": "Iron Bundle",
+      "value": 38
+    },
+    {
+      "source": "Dragonite",
+      "target": "Great Tusk",
+      "value": 31
+    },
+    {
+      "source": "Dragonite",
+      "target": "Amoonguss",
+      "value": 23
+    },
+    {
+      "source": "Dragonite",
+      "target": "Kingambit",
+      "value": 23
+    },
+    {
+      "source": "Dragonite",
+      "target": "Iron Hands",
+      "value": 23
+    },
+    {
+      "source": "Dragonite",
+      "target": "Gholdengo",
+      "value": 22
+    },
+    {
+      "source": "Dragonite",
+      "target": "Dondozo",
+      "value": 21
+    },
+    {
+      "source": "Dragonite",
+      "target": "Tatsugiri",
+      "value": 20
+    },
+    {
+      "source": "Dragonite",
+      "target": "Arcanine",
+      "value": 19
+    },
+    {
+      "source": "Dragonite",
+      "target": "Maushold",
+      "value": 19
+    },
+    {
+      "source": "Dondozo",
+      "target": "Tatsugiri",
+      "value": 90
+    },
+    {
+      "source": "Dondozo",
+      "target": "Flutter Mane",
+      "value": 58
+    },
+    {
+      "source": "Dondozo",
+      "target": "Gholdengo",
+      "value": 30
+    },
+    {
+      "source": "Dondozo",
+      "target": "Iron Hands",
+      "value": 22
+    },
+    {
+      "source": "Dondozo",
+      "target": "Dragonite",
+      "value": 21
+    },
+    {
+      "source": "Dondozo",
+      "target": "Kingambit",
+      "value": 18
+    },
+    {
+      "source": "Dondozo",
+      "target": "Brute Bonnet",
+      "value": 14
+    },
+    {
+      "source": "Dondozo",
+      "target": "Talonflame",
+      "value": 13
+    },
+    {
+      "source": "Dondozo",
+      "target": "Iron Bundle",
+      "value": 13
+    },
+    {
+      "source": "Dondozo",
+      "target": "Maushold",
+      "value": 12
+    },
+    {
+      "source": "Armarouge",
+      "target": "Indeedee-F",
+      "value": 78
+    },
+    {
+      "source": "Armarouge",
+      "target": "Flutter Mane",
+      "value": 39
+    },
+    {
+      "source": "Armarouge",
+      "target": "Iron Hands",
+      "value": 31
+    },
+    {
+      "source": "Armarouge",
+      "target": "Torkoal",
+      "value": 26
+    },
+    {
+      "source": "Armarouge",
+      "target": "Iron Bundle",
+      "value": 24
+    },
+    {
+      "source": "Armarouge",
+      "target": "Brute Bonnet",
+      "value": 22
+    },
+    {
+      "source": "Armarouge",
+      "target": "Great Tusk",
+      "value": 21
+    },
+    {
+      "source": "Armarouge",
+      "target": "Kingambit",
+      "value": 18
+    },
+    {
+      "source": "Armarouge",
+      "target": "Roaring Moon",
+      "value": 11
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Armarouge",
+      "value": 78
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Flutter Mane",
+      "value": 40
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Iron Hands",
+      "value": 31
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Torkoal",
+      "value": 28
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Iron Bundle",
+      "value": 24
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Great Tusk",
+      "value": 21
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Brute Bonnet",
+      "value": 21
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Kingambit",
+      "value": 18
+    },
+    {
+      "source": "Indeedee-F",
+      "target": "Roaring Moon",
+      "value": 11
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Dondozo",
+      "value": 93
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Flutter Mane",
+      "value": 57
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Gholdengo",
+      "value": 31
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Iron Hands",
+      "value": 22
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Dragonite",
+      "value": 21
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Kingambit",
+      "value": 18
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Brute Bonnet",
+      "value": 15
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Talonflame",
+      "value": 13
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Arcanine",
+      "value": 12
+    },
+    {
+      "source": "Tatsugiri",
+      "target": "Maushold",
+      "value": 11
+    },
+    {
+      "source": "Maushold",
+      "target": "Iron Bundle",
+      "value": 46
+    },
+    {
+      "source": "Maushold",
+      "target": "Flutter Mane",
+      "value": 42
+    },
+    {
+      "source": "Maushold",
+      "target": "Great Tusk",
+      "value": 28
+    },
+    {
+      "source": "Maushold",
+      "target": "Gholdengo",
+      "value": 27
+    },
+    {
+      "source": "Maushold",
+      "target": "Dragonite",
+      "value": 20
+    },
+    {
+      "source": "Maushold",
+      "target": "Arcanine",
+      "value": 18
+    },
+    {
+      "source": "Maushold",
+      "target": "Roaring Moon",
+      "value": 17
+    },
+    {
+      "source": "Maushold",
+      "target": "Iron Hands",
+      "value": 14
+    },
+    {
+      "source": "Maushold",
+      "target": "Dondozo",
+      "value": 13
+    },
+    {
+      "source": "Maushold",
+      "target": "Tatsugiri",
+      "value": 11
+    },
+    {
+      "source": "Talonflame",
+      "target": "Great Tusk",
+      "value": 65
+    },
+    {
+      "source": "Talonflame",
+      "target": "Iron Bundle",
+      "value": 62
+    },
+    {
+      "source": "Talonflame",
+      "target": "Flutter Mane",
+      "value": 58
+    },
+    {
+      "source": "Talonflame",
+      "target": "Tyranitar",
+      "value": 34
+    },
+    {
+      "source": "Talonflame",
+      "target": "Gholdengo",
+      "value": 32
+    },
+    {
+      "source": "Talonflame",
+      "target": "Kingambit",
+      "value": 16
+    },
+    {
+      "source": "Talonflame",
+      "target": "Brute Bonnet",
+      "value": 14
+    },
+    {
+      "source": "Talonflame",
+      "target": "Dondozo",
+      "value": 13
+    },
+    {
+      "source": "Talonflame",
+      "target": "Tatsugiri",
+      "value": 13
+    },
+    {
+      "source": "Talonflame",
+      "target": "Amoonguss",
+      "value": 13
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Flutter Mane",
+      "value": 48
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Iron Hands",
+      "value": 28
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Great Tusk",
+      "value": 27
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Iron Bundle",
+      "value": 26
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Torkoal",
+      "value": 26
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Armarouge",
+      "value": 25
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Indeedee-F",
+      "value": 24
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Gholdengo",
+      "value": 20
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Dondozo",
+      "value": 17
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Tatsugiri",
+      "value": 16
+    },
+    {
+      "source": "Brute Bonnet",
+      "target": "Talonflame",
+      "value": 15
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Flutter Mane",
+      "value": 60
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Iron Bundle",
+      "value": 54
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Great Tusk",
+      "value": 46
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Talonflame",
+      "value": 43
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Gholdengo",
+      "value": 23
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Amoonguss",
+      "value": 16
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Armarouge",
+      "value": 11
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Indeedee-F",
+      "value": 11
+    },
+    {
+      "source": "Tyranitar",
+      "target": "Iron Hands",
+      "value": 9
+    },
+    {
+      "source": "Palafin",
+      "target": "Amoonguss",
+      "value": 60
+    },
+    {
+      "source": "Palafin",
+      "target": "Iron Hands",
+      "value": 54
+    },
+    {
+      "source": "Palafin",
+      "target": "Flutter Mane",
+      "value": 49
+    },
+    {
+      "source": "Palafin",
+      "target": "Arcanine",
+      "value": 38
+    },
+    {
+      "source": "Palafin",
+      "target": "Dragonite",
+      "value": 22
+    },
+    {
+      "source": "Palafin",
+      "target": "Roaring Moon",
+      "value": 21
+    },
+    {
+      "source": "Palafin",
+      "target": "Gholdengo",
+      "value": 21
+    },
+    {
+      "source": "Palafin",
+      "target": "Maushold",
+      "value": 9
+    },
+    {
+      "source": "Torkoal",
+      "target": "Flutter Mane",
+      "value": 53
+    },
+    {
+      "source": "Torkoal",
+      "target": "Indeedee-F",
+      "value": 38
+    },
+    {
+      "source": "Torkoal",
+      "target": "Armarouge",
+      "value": 36
+    },
+    {
+      "source": "Torkoal",
+      "target": "Great Tusk",
+      "value": 32
+    },
+    {
+      "source": "Torkoal",
+      "target": "Brute Bonnet",
+      "value": 31
+    },
+    {
+      "source": "Torkoal",
+      "target": "Iron Hands",
+      "value": 28
+    },
+    {
+      "source": "Torkoal",
+      "target": "Kingambit",
+      "value": 18
+    },
+    {
+      "source": "Torkoal",
+      "target": "Roaring Moon",
+      "value": 16
+    },
+    {
+      "source": "Torkoal",
+      "target": "Iron Bundle",
+      "value": 12
+    }
+  ]
+}
