@@ -25,7 +25,7 @@ for index, row in df.iterrows():
     if row['from'] not in groups or row['to'] not in groups:
         continue
     # scale weight to integer with minimum value of 1
-    weight = max(1, int(float(row['weight'].strip('%'))))
+    weight = max(1, int(float(row['weight'].strip('%'))))/5
 
     links.append({"source": row['from'], "target": row['to'], "value": weight})
 
