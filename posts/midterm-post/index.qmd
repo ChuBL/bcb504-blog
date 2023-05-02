@@ -262,7 +262,7 @@ chart = ForceGraph(miserables, {
 ```
 
 ```{ojs}
-miserables = FileAttachment("teammates.json").json()
+miserables = FileAttachment("output.json").json()
 
 
 // Copyright 2021 Observable, Inc.

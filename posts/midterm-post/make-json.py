@@ -15,11 +15,15 @@ group_counter = 1
 
 for index, row in df.iterrows():
     for item in [row['from'], row['to']]:
+        if group_counter > 20:
+            break
         if item not in groups:
             nodes.append({"id": item, "group": group_counter})
             groups[item] = group_counter
             group_counter += 1
 
+    if row['from'] not in groups or row['to'] not in groups:
+        continue
     # scale weight to integer with minimum value of 1
     weight = max(1, int(float(row['weight'].strip('%'))))
 
