@@ -138,6 +138,13 @@ edge_data <- read_csv("teammates.csv")
 # Filter the top 50 Pokemon
 top_20_pokemon <- head(pokemon_data, 20)
 ```
+
+<figure style="text-align:center">
+<img src="0987Flutter_Mane.png" alt="Flutter Mane" width="400"/>
+<figcaption>Flutter Mane</figcaption>
+</figure>
+> The most popular pokemon till Feb, 2023: Flutter Mane.
+
 ```{r}
 top_20_pokemon
 ```
@@ -167,8 +174,9 @@ E(g)$width <- as.numeric(substr(edge_data$weight, 1, nchar(edge_data$weight) - 1
 ```
 
 ```{r my-plot, out.width = "10in", out.height = "8in"}
+
 # Plot the graph
-layout <- layout_as_tree(g)
+layout <- layout_nicely(g)
 suppressWarnings({
 plot(g,
      vertex.label.cex = 0.8, # Adjust the font size of vertex labels
@@ -179,7 +187,9 @@ plot(g,
      edge.arrow.size = 0,
      edge.color = "gray",
      #layout = layout_with_fr(g, niter = 2000) # Set the layout algorithm
-     layout = layout
+     layout = layout,
+     #vertex.label.dist = 5, # Increase the distance of the label from the vertex
+     #vertex.label.degree = 45 
      )
 title(main = "The top 20 Pokemon and their teammates")
 })
@@ -187,7 +197,219 @@ title(main = "The top 20 Pokemon and their teammates")
 
 ```
 
-These codes aim to create a network visualization of the top 20 Pokemon and their teammates in the gen9 VGC 2023 series 2 using the R package igraph. The code reads in two CSV files, "gen9vgc2023series2-1630.csv" and "teammates.csv", which contain the data on the Pokemon and their teammates. The graph is plotted with various visualization settings, such as adjusting the font size of vertex labels, setting the layout algorithm to layout_with_fr(), and suppressing any warning messages that may arise during the plotting process. The resulting graph represents the top 20 Pokemon and their teammates as nodes and edges, respectively, with the size of each node representing its usage percentage.
+These codes aim to create a network visualization of the top 20 Pokemon and their teammates in the gen9 VGC 2023 series 2 using the R package igraph. The code reads in two CSV files, "gen9vgc2023series2-1630.csv" and "teammates.csv", which contain the data on the Pokemon and their teammates.
+
+The graph is plotted with various visualization settings, such as adjusting the font size of vertex labels, setting the layout algorithm to `layout_nicely()`, and suppressing any warning messages that may arise during the plotting process. The resulting graph represents the top 20 Pokemon and their teammates as nodes and edges, respectively, with the size of each node representing its usage percentage.
+
+The `layout_nicely()` isn't a satisfying solution to such not even complex network. The static network appeared to be insufficient when the number of nodes and links increase.
+
+::: callout-note
+It occurred to me that it is hard to increase the node distances.
+I have tried to apply the les miserable interactive network, but the code to the right side of `d3=` seems extremely long and very inconvenient to copy from the [website]( https://observablehq.com/@hepplerj/les-miserables-network). I would like to know that if I am getting anything wrong.
+:::
+
+```{ojs}
+graph1 = ({
+  nodes: [
+    {id: "a"},
+    {id: "b"},
+    {id: "c"}
+  ],
+  links: []
+})
+
+
+graph2 = ({
+  nodes: [
+    {id: "a"},
+    {id: "b"},
+    {id: "c"}
+  ],
+  links: [
+    {source: "a", target: "b"},
+    {source: "b", target: "c"},
+    {source: "c", target: "a"}
+  ]
+})
+
+
+graph3 = ({
+  nodes: [
+    {id: "a"},
+    {id: "b"}
+  ],
+  links: [
+    {source: "a", target: "b"}
+  ]
+})
+
+
+color = d3.scaleOrdinal(d3.schemeTableau10)
+
+height = 400
+```
+
+```{ojs}
+chart = ForceGraph(miserables, {
+  nodeId: d => d.id,
+  nodeGroup: d => d.group,
+  nodeTitle: d => `${d.id}\n${d.group}`,
+  linkStrokeWidth: l => Math.sqrt(l.value),
+  width,
+  height: 600,
+  invalidation // a promise to stop the simulation when the cell is re-run
+})
+```
+
+```{ojs}
+miserables = FileAttachment("teammates.json").json()
+
+
+// Copyright 2021 Observable, Inc.
+// Released under the ISC license.
+// https://observablehq.com/@d3/force-directed-graph
+function ForceGraph({
+  nodes, // an iterable of node objects (typically [{id}, …])
+  links // an iterable of link objects (typically [{source, target}, …])
+}, {
+  nodeId = d => d.id, // given d in nodes, returns a unique identifier (string)
+  nodeGroup, // given d in nodes, returns an (ordinal) value for color
+  nodeGroups, // an array of ordinal values representing the node groups
+  nodeTitle, // given d in nodes, a title string
+  nodeFill = "currentColor", // node stroke fill (if not using a group color encoding)
+  nodeStroke = "#fff", // node stroke color
+  nodeStrokeWidth = 1.5, // node stroke width, in pixels
+  nodeStrokeOpacity = 1, // node stroke opacity
+  nodeRadius = 5, // node radius, in pixels
+  nodeStrength,
+  linkSource = ({source}) => source, // given d in links, returns a node identifier string
+  linkTarget = ({target}) => target, // given d in links, returns a node identifier string
+  linkStroke = "#999", // link stroke color
+  linkStrokeOpacity = 0.6, // link stroke opacity
+  linkStrokeWidth = 1.5, // given d in links, returns a stroke width in pixels
+  linkStrokeLinecap = "round", // link stroke linecap
+  linkStrength,
+  colors = d3.schemeTableau10, // an array of color strings, for the node groups
+  width = 640, // outer width, in pixels
+  height = 400, // outer height, in pixels
+  invalidation // when this promise resolves, stop the simulation
+} = {}) {
+  // Compute values.
+  const N = d3.map(nodes, nodeId).map(intern);
+  const LS = d3.map(links, linkSource).map(intern);
+  const LT = d3.map(links, linkTarget).map(intern);
+  if (nodeTitle === undefined) nodeTitle = (_, i) => N[i];
+  const T = nodeTitle == null ? null : d3.map(nodes, nodeTitle);
+  const G = nodeGroup == null ? null : d3.map(nodes, nodeGroup).map(intern);
+  const W = typeof linkStrokeWidth !== "function" ? null : d3.map(links, linkStrokeWidth);
+  const L = typeof linkStroke !== "function" ? null : d3.map(links, linkStroke);
+
+  // Replace the input nodes and links with mutable objects for the simulation.
+  nodes = d3.map(nodes, (_, i) => ({id: N[i]}));
+  links = d3.map(links, (_, i) => ({source: LS[i], target: LT[i]}));
+
+  // Compute default domains.
+  if (G && nodeGroups === undefined) nodeGroups = d3.sort(G);
+
+  // Construct the scales.
+  const color = nodeGroup == null ? null : d3.scaleOrdinal(nodeGroups, colors);
+
+  // Construct the forces.
+  const forceNode = d3.forceManyBody();
+  const forceLink = d3.forceLink(links).id(({index: i}) => N[i]);
+  if (nodeStrength !== undefined) forceNode.strength(nodeStrength);
+  if (linkStrength !== undefined) forceLink.strength(linkStrength);
+
+  const simulation = d3.forceSimulation(nodes)
+      .force("link", forceLink)
+      .force("charge", forceNode)
+      .force("center",  d3.forceCenter())
+      .on("tick", ticked);
+
+  const svg = d3.create("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", [-width / 2, -height / 2, width, height])
+      .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
+  const link = svg.append("g")
+      .attr("stroke", typeof linkStroke !== "function" ? linkStroke : null)
+      .attr("stroke-opacity", linkStrokeOpacity)
+      .attr("stroke-width", typeof linkStrokeWidth !== "function" ? linkStrokeWidth : null)
+      .attr("stroke-linecap", linkStrokeLinecap)
+    .selectAll("line")
+    .data(links)
+    .join("line");
+
+  const node = svg.append("g")
+      .attr("fill", nodeFill)
+      .attr("stroke", nodeStroke)
+      .attr("stroke-opacity", nodeStrokeOpacity)
+      .attr("stroke-width", nodeStrokeWidth)
+    .selectAll("circle")
+    .data(nodes)
+    .join("circle")
+      .attr("r", nodeRadius)
+      .call(drag(simulation));
+
+  if (W) link.attr("stroke-width", ({index: i}) => W[i]);
+  if (L) link.attr("stroke", ({index: i}) => L[i]);
+  if (G) node.attr("fill", ({index: i}) => color(G[i]));
+  if (T) node.append("title").text(({index: i}) => T[i]);
+  if (invalidation != null) invalidation.then(() => simulation.stop());
+
+  function intern(value) {
+    return value !== null && typeof value === "object" ? value.valueOf() : value;
+  }
+
+  function ticked() {
+    link
+      .attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
+
+    node
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y);
+  }
+
+  function drag(simulation) {    
+    function dragstarted(event) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      event.subject.fx = event.subject.x;
+      event.subject.fy = event.subject.y;
+    }
+    
+    function dragged(event) {
+      event.subject.fx = event.x;
+      event.subject.fy = event.y;
+    }
+    
+    function dragended(event) {
+      if (!event.active) simulation.alphaTarget(0);
+      event.subject.fx = null;
+      event.subject.fy = null;
+    }
+    
+    return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+  }
+
+  return Object.assign(svg.node(), {scales: {color}});
+}
+
+
+import {howto} from "@d3/example-components"
+
+import {Swatches} from "@d3/color-legend"
+
+```
+
+
+
 
 ```{r}
 
@@ -211,10 +433,6 @@ ggplot(data = teammates, aes(x = Name, y = Usage)) +
 
 Usage Percentages of Teammates for **Flutter Mane**, ordered by the usage percentages.
 
-<figure style="text-align:center">
-<img src="0987Flutter_Mane.png" alt="Flutter Mane" width="400"/>
-<figcaption>Flutter Mane</figcaption>
-</figure>
 
 ```{r}
 
@@ -377,9 +595,8 @@ Error in unit(rep(1, nrow), "null") :
   'x' and 'units' must have length > 0
 
 I would like to plot the item distributions but ended up with this error message.
-:::
 
-
+::: 
 
 
 
