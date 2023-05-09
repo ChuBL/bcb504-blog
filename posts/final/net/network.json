@@ -1,0 +1,1244 @@
+{
+    "nodes": [
+        {
+            "id": "75-84",
+            "group": 0
+        },
+        {
+            "id": "65-74",
+            "group": 1
+        },
+        {
+            "id": "25-34",
+            "group": 2
+        },
+        {
+            "id": "45-54",
+            "group": 3
+        },
+        {
+            "id": "85+",
+            "group": 4
+        },
+        {
+            "id": "Not stated",
+            "group": 5
+        },
+        {
+            "id": "0-24",
+            "group": 6
+        },
+        {
+            "id": "55-64",
+            "group": 7
+        },
+        {
+            "id": "35-44",
+            "group": 8
+        },
+        {
+            "id": "All Ages",
+            "group": 9
+        },
+        {
+            "id": "Malignant neoplasms",
+            "group": 10
+        },
+        {
+            "id": "Vascular and unspecified dementia",
+            "group": 11
+        },
+        {
+            "id": "Renal failure",
+            "group": 12
+        },
+        {
+            "id": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "group": 13
+        },
+        {
+            "id": "All other conditions and causes (residual)",
+            "group": 14
+        },
+        {
+            "id": "Obesity",
+            "group": 15
+        },
+        {
+            "id": "Diabetes",
+            "group": 16
+        },
+        {
+            "id": "Sepsis",
+            "group": 17
+        },
+        {
+            "id": "Respiratory diseases",
+            "group": 18
+        },
+        {
+            "id": "COVID-19",
+            "group": 19
+        },
+        {
+            "id": "Alzheimer disease",
+            "group": 20
+        },
+        {
+            "id": "Circulatory diseases",
+            "group": 21
+        }
+    ],
+    "links": [
+        {
+            "source": "0-24",
+            "target": "Respiratory diseases",
+            "value": 0.13681793732781453
+        },
+        {
+            "source": "25-34",
+            "target": "Respiratory diseases",
+            "value": 0.5102316600605933
+        },
+        {
+            "source": "35-44",
+            "target": "Respiratory diseases",
+            "value": 1.3288353550310277
+        },
+        {
+            "source": "45-54",
+            "target": "Respiratory diseases",
+            "value": 3.3008213506872353
+        },
+        {
+            "source": "55-64",
+            "target": "Respiratory diseases",
+            "value": 7.282453719826283
+        },
+        {
+            "source": "65-74",
+            "target": "Respiratory diseases",
+            "value": 11.335596500509078
+        },
+        {
+            "source": "75-84",
+            "target": "Respiratory diseases",
+            "value": 12.11370421273417
+        },
+        {
+            "source": "85+",
+            "target": "Respiratory diseases",
+            "value": 10.549247811488986
+        },
+        {
+            "source": "Not stated",
+            "target": "Respiratory diseases",
+            "value": 0.0010633518445166933
+        },
+        {
+            "source": "All Ages",
+            "target": "Respiratory diseases",
+            "value": 46.55877189950971
+        },
+        {
+            "source": "0-24",
+            "target": "Respiratory diseases",
+            "value": 0.01781114339565461
+        },
+        {
+            "source": "25-34",
+            "target": "Respiratory diseases",
+            "value": 0.040318757437924624
+        },
+        {
+            "source": "35-44",
+            "target": "Respiratory diseases",
+            "value": 0.09747391908069689
+        },
+        {
+            "source": "45-54",
+            "target": "Respiratory diseases",
+            "value": 0.2874594486343461
+        },
+        {
+            "source": "55-64",
+            "target": "Respiratory diseases",
+            "value": 1.1127090926330099
+        },
+        {
+            "source": "65-74",
+            "target": "Respiratory diseases",
+            "value": 2.422758565077576
+        },
+        {
+            "source": "75-84",
+            "target": "Respiratory diseases",
+            "value": 3.113848651359717
+        },
+        {
+            "source": "85+",
+            "target": "Respiratory diseases",
+            "value": 2.397681184077724
+        },
+        {
+            "source": "Not stated",
+            "target": "Respiratory diseases",
+            "value": 8.861265370972445e-05
+        },
+        {
+            "source": "All Ages",
+            "target": "Respiratory diseases",
+            "value": 9.490149374350358
+        },
+        {
+            "source": "0-24",
+            "target": "Respiratory diseases",
+            "value": 0.04235684847324828
+        },
+        {
+            "source": "25-34",
+            "target": "Respiratory diseases",
+            "value": 0.15941416402379427
+        },
+        {
+            "source": "35-44",
+            "target": "Respiratory diseases",
+            "value": 0.41772004958764103
+        },
+        {
+            "source": "45-54",
+            "target": "Respiratory diseases",
+            "value": 1.014260434361506
+        },
+        {
+            "source": "55-64",
+            "target": "Respiratory diseases",
+            "value": 2.0250649752283323
+        },
+        {
+            "source": "65-74",
+            "target": "Respiratory diseases",
+            "value": 2.655898456987861
+        },
+        {
+            "source": "75-84",
+            "target": "Respiratory diseases",
+            "value": 2.0068993812178393
+        },
+        {
+            "source": "85+",
+            "target": "Respiratory diseases",
+            "value": 1.0777070944176685
+        },
+        {
+            "source": "Not stated",
+            "target": "Respiratory diseases",
+            "value": 8.861265370972445e-05
+        },
+        {
+            "source": "All Ages",
+            "target": "Respiratory diseases",
+            "value": 9.3994100169516
+        },
+        {
+            "source": "0-24",
+            "target": "Respiratory diseases",
+            "value": 0.09091658270617728
+        },
+        {
+            "source": "25-34",
+            "target": "Respiratory diseases",
+            "value": 0.35622286791309227
+        },
+        {
+            "source": "35-44",
+            "target": "Respiratory diseases",
+            "value": 0.9590547511003477
+        },
+        {
+            "source": "45-54",
+            "target": "Respiratory diseases",
+            "value": 2.4904586325118054
+        },
+        {
+            "source": "55-64",
+            "target": "Respiratory diseases",
+            "value": 5.8121925694745356
+        },
+        {
+            "source": "65-74",
+            "target": "Respiratory diseases",
+            "value": 9.485984579626
+        },
+        {
+            "source": "75-84",
+            "target": "Respiratory diseases",
+            "value": 10.37370614449002
+        },
+        {
+            "source": "85+",
+            "target": "Respiratory diseases",
+            "value": 8.593832382076496
+        },
+        {
+            "source": "Not stated",
+            "target": "Respiratory diseases",
+            "value": 0.0005316759222583466
+        },
+        {
+            "source": "All Ages",
+            "target": "Respiratory diseases",
+            "value": 38.16290018582074
+        },
+        {
+            "source": "0-24",
+            "target": "Respiratory diseases",
+            "value": 0.00717762495048768
+        },
+        {
+            "source": "25-34",
+            "target": "Respiratory diseases",
+            "value": 0.020380910353236623
+        },
+        {
+            "source": "35-44",
+            "target": "Respiratory diseases",
+            "value": 0.0478508330032512
+        },
+        {
+            "source": "45-54",
+            "target": "Respiratory diseases",
+            "value": 0.11324697144102784
+        },
+        {
+            "source": "55-64",
+            "target": "Respiratory diseases",
+            "value": 0.26450877132352746
+        },
+        {
+            "source": "65-74",
+            "target": "Respiratory diseases",
+            "value": 0.432518362757165
+        },
+        {
+            "source": "75-84",
+            "target": "Respiratory diseases",
+            "value": 0.5407144129367386
+        },
+        {
+            "source": "85+",
+            "target": "Respiratory diseases",
+            "value": 0.6165668445122626
+        },
+        {
+            "source": "Not stated",
+            "target": "Respiratory diseases",
+            "value": 0.0
+        },
+        {
+            "source": "All Ages",
+            "target": "Respiratory diseases",
+            "value": 2.042964731277697
+        },
+        {
+            "source": "0-24",
+            "target": "Respiratory diseases",
+            "value": 0.034470322293082806
+        },
+        {
+            "source": "25-34",
+            "target": "Respiratory diseases",
+            "value": 0.06911786989358507
+        },
+        {
+            "source": "35-44",
+            "target": "Respiratory diseases",
+            "value": 0.16331312078702215
+        },
+        {
+            "source": "45-54",
+            "target": "Respiratory diseases",
+            "value": 0.3809457982981054
+        },
+        {
+            "source": "55-64",
+            "target": "Respiratory diseases",
+            "value": 0.8354400991752821
+        },
+        {
+            "source": "65-74",
+            "target": "Respiratory diseases",
+            "value": 1.291440815165524
+        },
+        {
+            "source": "75-84",
+            "target": "Respiratory diseases",
+            "value": 1.4161188189351062
+        },
+        {
+            "source": "85+",
+            "target": "Respiratory diseases",
+            "value": 1.2151453203214513
+        },
+        {
+            "source": "Not stated",
+            "target": "Respiratory diseases",
+            "value": 8.861265370972445e-05
+        },
+        {
+            "source": "All Ages",
+            "target": "Respiratory diseases",
+            "value": 5.4060807775228685
+        },
+        {
+            "source": "0-24",
+            "target": "Circulatory diseases",
+            "value": 0.009038490678391893
+        },
+        {
+            "source": "25-34",
+            "target": "Circulatory diseases",
+            "value": 0.07851081118681585
+        },
+        {
+            "source": "35-44",
+            "target": "Circulatory diseases",
+            "value": 0.31962584193097604
+        },
+        {
+            "source": "45-54",
+            "target": "Circulatory diseases",
+            "value": 0.9351293345987219
+        },
+        {
+            "source": "55-64",
+            "target": "Circulatory diseases",
+            "value": 2.3859843137880405
+        },
+        {
+            "source": "65-74",
+            "target": "Circulatory diseases",
+            "value": 4.127666022452674
+        },
+        {
+            "source": "75-84",
+            "target": "Circulatory diseases",
+            "value": 5.046224790807678
+        },
+        {
+            "source": "85+",
+            "target": "Circulatory diseases",
+            "value": 5.683881446902855
+        },
+        {
+            "source": "Not stated",
+            "target": "Circulatory diseases",
+            "value": 0.0005316759222583466
+        },
+        {
+            "source": "All Ages",
+            "target": "Circulatory diseases",
+            "value": 18.58659272826841
+        },
+        {
+            "source": "0-24",
+            "target": "Circulatory diseases",
+            "value": 0.0028356049187111825
+        },
+        {
+            "source": "25-34",
+            "target": "Circulatory diseases",
+            "value": 0.025077380999852017
+        },
+        {
+            "source": "35-44",
+            "target": "Circulatory diseases",
+            "value": 0.09587889131392184
+        },
+        {
+            "source": "45-54",
+            "target": "Circulatory diseases",
+            "value": 0.35950153610035207
+        },
+        {
+            "source": "55-64",
+            "target": "Circulatory diseases",
+            "value": 1.1608257635973902
+        },
+        {
+            "source": "65-74",
+            "target": "Circulatory diseases",
+            "value": 2.4335693088301626
+        },
+        {
+            "source": "75-84",
+            "target": "Circulatory diseases",
+            "value": 3.418942018082298
+        },
+        {
+            "source": "85+",
+            "target": "Circulatory diseases",
+            "value": 3.623548635498052
+        },
+        {
+            "source": "Not stated",
+            "target": "Circulatory diseases",
+            "value": 0.0005316759222583466
+        },
+        {
+            "source": "All Ages",
+            "target": "Circulatory diseases",
+            "value": 11.120710815262997
+        },
+        {
+            "source": "0-24",
+            "target": "Circulatory diseases",
+            "value": 0.041736559897280215
+        },
+        {
+            "source": "25-34",
+            "target": "Circulatory diseases",
+            "value": 0.14231192185781744
+        },
+        {
+            "source": "35-44",
+            "target": "Circulatory diseases",
+            "value": 0.3621599157116438
+        },
+        {
+            "source": "45-54",
+            "target": "Circulatory diseases",
+            "value": 0.884620121984179
+        },
+        {
+            "source": "55-64",
+            "target": "Circulatory diseases",
+            "value": 1.8917915440489068
+        },
+        {
+            "source": "65-74",
+            "target": "Circulatory diseases",
+            "value": 2.8231991471918207
+        },
+        {
+            "source": "75-84",
+            "target": "Circulatory diseases",
+            "value": 2.9514216571097918
+        },
+        {
+            "source": "85+",
+            "target": "Circulatory diseases",
+            "value": 2.7283836077224155
+        },
+        {
+            "source": "Not stated",
+            "target": "Circulatory diseases",
+            "value": 8.861265370972445e-05
+        },
+        {
+            "source": "All Ages",
+            "target": "Circulatory diseases",
+            "value": 11.825713088177565
+        },
+        {
+            "source": "0-24",
+            "target": "Circulatory diseases",
+            "value": 0.008861265370972444
+        },
+        {
+            "source": "25-34",
+            "target": "Circulatory diseases",
+            "value": 0.024988768346142293
+        },
+        {
+            "source": "35-44",
+            "target": "Circulatory diseases",
+            "value": 0.06725700416568085
+        },
+        {
+            "source": "45-54",
+            "target": "Circulatory diseases",
+            "value": 0.21603764974430817
+        },
+        {
+            "source": "55-64",
+            "target": "Circulatory diseases",
+            "value": 0.6877228054411714
+        },
+        {
+            "source": "65-74",
+            "target": "Circulatory diseases",
+            "value": 1.5479744476551764
+        },
+        {
+            "source": "75-84",
+            "target": "Circulatory diseases",
+            "value": 2.490370019858096
+        },
+        {
+            "source": "85+",
+            "target": "Circulatory diseases",
+            "value": 3.0506678292646834
+        },
+        {
+            "source": "Not stated",
+            "target": "Circulatory diseases",
+            "value": 0.0
+        },
+        {
+            "source": "All Ages",
+            "target": "Circulatory diseases",
+            "value": 8.09387978984623
+        },
+        {
+            "source": "0-24",
+            "target": "Circulatory diseases",
+            "value": 0.006734561681939058
+        },
+        {
+            "source": "25-34",
+            "target": "Circulatory diseases",
+            "value": 0.0275585353037243
+        },
+        {
+            "source": "35-44",
+            "target": "Circulatory diseases",
+            "value": 0.07913109976278392
+        },
+        {
+            "source": "45-54",
+            "target": "Circulatory diseases",
+            "value": 0.22888648453221824
+        },
+        {
+            "source": "55-64",
+            "target": "Circulatory diseases",
+            "value": 0.6905584103598826
+        },
+        {
+            "source": "65-74",
+            "target": "Circulatory diseases",
+            "value": 1.5234287425775825
+        },
+        {
+            "source": "75-84",
+            "target": "Circulatory diseases",
+            "value": 2.4693688209288913
+        },
+        {
+            "source": "85+",
+            "target": "Circulatory diseases",
+            "value": 3.4027259024534184
+        },
+        {
+            "source": "Not stated",
+            "target": "Circulatory diseases",
+            "value": 8.861265370972445e-05
+        },
+        {
+            "source": "All Ages",
+            "target": "Circulatory diseases",
+            "value": 8.42848117025415
+        },
+        {
+            "source": "0-24",
+            "target": "Circulatory diseases",
+            "value": 0.009747391908069688
+        },
+        {
+            "source": "25-34",
+            "target": "Circulatory diseases",
+            "value": 0.02569766957582009
+        },
+        {
+            "source": "35-44",
+            "target": "Circulatory diseases",
+            "value": 0.0747004670772977
+        },
+        {
+            "source": "45-54",
+            "target": "Circulatory diseases",
+            "value": 0.2127589815570484
+        },
+        {
+            "source": "55-64",
+            "target": "Circulatory diseases",
+            "value": 0.5983126378480594
+        },
+        {
+            "source": "65-74",
+            "target": "Circulatory diseases",
+            "value": 1.1508125337281914
+        },
+        {
+            "source": "75-84",
+            "target": "Circulatory diseases",
+            "value": 1.5220109401182271
+        },
+        {
+            "source": "85+",
+            "target": "Circulatory diseases",
+            "value": 1.7181993554315569
+        },
+        {
+            "source": "Not stated",
+            "target": "Circulatory diseases",
+            "value": 8.861265370972445e-05
+        },
+        {
+            "source": "All Ages",
+            "target": "Circulatory diseases",
+            "value": 5.31232858989798
+        },
+        {
+            "source": "0-24",
+            "target": "Circulatory diseases",
+            "value": 0.04147072193615104
+        },
+        {
+            "source": "25-34",
+            "target": "Circulatory diseases",
+            "value": 0.10234761503473172
+        },
+        {
+            "source": "35-44",
+            "target": "Circulatory diseases",
+            "value": 0.23340572987141417
+        },
+        {
+            "source": "45-54",
+            "target": "Circulatory diseases",
+            "value": 0.5334481753325411
+        },
+        {
+            "source": "55-64",
+            "target": "Circulatory diseases",
+            "value": 1.1624207913641653
+        },
+        {
+            "source": "65-74",
+            "target": "Circulatory diseases",
+            "value": 1.778544572607879
+        },
+        {
+            "source": "75-84",
+            "target": "Circulatory diseases",
+            "value": 2.006013254680742
+        },
+        {
+            "source": "85+",
+            "target": "Circulatory diseases",
+            "value": 2.0238243980763966
+        },
+        {
+            "source": "Not stated",
+            "target": "Circulatory diseases",
+            "value": 8.861265370972445e-05
+        },
+        {
+            "source": "All Ages",
+            "target": "Circulatory diseases",
+            "value": 7.881563871557732
+        },
+        {
+            "source": "0-24",
+            "target": "Sepsis",
+            "value": 0.036774251289535646
+        },
+        {
+            "source": "25-34",
+            "target": "Sepsis",
+            "value": 0.1214879482360322
+        },
+        {
+            "source": "35-44",
+            "target": "Sepsis",
+            "value": 0.3395636890156641
+        },
+        {
+            "source": "45-54",
+            "target": "Sepsis",
+            "value": 0.8699104214683648
+        },
+        {
+            "source": "55-64",
+            "target": "Sepsis",
+            "value": 1.9392879264373195
+        },
+        {
+            "source": "65-74",
+            "target": "Sepsis",
+            "value": 2.851998259647481
+        },
+        {
+            "source": "75-84",
+            "target": "Sepsis",
+            "value": 2.5518672015326445
+        },
+        {
+            "source": "85+",
+            "target": "Sepsis",
+            "value": 1.6478409083860355
+        },
+        {
+            "source": "Not stated",
+            "target": "Sepsis",
+            "value": 0.0001772253074194489
+        },
+        {
+            "source": "All Ages",
+            "target": "Sepsis",
+            "value": 10.358907831320497
+        },
+        {
+            "source": "0-24",
+            "target": "Malignant neoplasms",
+            "value": 0.015329989091782329
+        },
+        {
+            "source": "25-34",
+            "target": "Malignant neoplasms",
+            "value": 0.02543183161469091
+        },
+        {
+            "source": "35-44",
+            "target": "Malignant neoplasms",
+            "value": 0.0779791352645575
+        },
+        {
+            "source": "45-54",
+            "target": "Malignant neoplasms",
+            "value": 0.2472293038501312
+        },
+        {
+            "source": "55-64",
+            "target": "Malignant neoplasms",
+            "value": 0.8556437842210992
+        },
+        {
+            "source": "65-74",
+            "target": "Malignant neoplasms",
+            "value": 1.707831674947519
+        },
+        {
+            "source": "75-84",
+            "target": "Malignant neoplasms",
+            "value": 1.87796797007019
+        },
+        {
+            "source": "85+",
+            "target": "Malignant neoplasms",
+            "value": 1.343899506161681
+        },
+        {
+            "source": "Not stated",
+            "target": "Malignant neoplasms",
+            "value": 0.0
+        },
+        {
+            "source": "All Ages",
+            "target": "Malignant neoplasms",
+            "value": 6.151313195221651
+        },
+        {
+            "source": "0-24",
+            "target": "Diabetes",
+            "value": 0.024900155692432566
+        },
+        {
+            "source": "25-34",
+            "target": "Diabetes",
+            "value": 0.1095252399852194
+        },
+        {
+            "source": "35-44",
+            "target": "Diabetes",
+            "value": 0.37686961622745807
+        },
+        {
+            "source": "45-54",
+            "target": "Diabetes",
+            "value": 1.082758015679123
+        },
+        {
+            "source": "55-64",
+            "target": "Diabetes",
+            "value": 2.5306887772960205
+        },
+        {
+            "source": "65-74",
+            "target": "Diabetes",
+            "value": 4.027002047838427
+        },
+        {
+            "source": "75-84",
+            "target": "Diabetes",
+            "value": 3.958238628559681
+        },
+        {
+            "source": "85+",
+            "target": "Diabetes",
+            "value": 2.650138634496729
+        },
+        {
+            "source": "Not stated",
+            "target": "Diabetes",
+            "value": 0.0003544506148388978
+        },
+        {
+            "source": "All Ages",
+            "target": "Diabetes",
+            "value": 14.76047556638993
+        },
+        {
+            "source": "0-24",
+            "target": "Obesity",
+            "value": 0.06229469555793628
+        },
+        {
+            "source": "25-34",
+            "target": "Obesity",
+            "value": 0.2517485491893271
+        },
+        {
+            "source": "35-44",
+            "target": "Obesity",
+            "value": 0.5207765658520505
+        },
+        {
+            "source": "45-54",
+            "target": "Obesity",
+            "value": 0.869555970853526
+        },
+        {
+            "source": "55-64",
+            "target": "Obesity",
+            "value": 1.2079676953709637
+        },
+        {
+            "source": "65-74",
+            "target": "Obesity",
+            "value": 1.1015438982655845
+        },
+        {
+            "source": "75-84",
+            "target": "Obesity",
+            "value": 0.5440816937777081
+        },
+        {
+            "source": "85+",
+            "target": "Obesity",
+            "value": 0.1326531426034575
+        },
+        {
+            "source": "Not stated",
+            "target": "Obesity",
+            "value": 0.0001772253074194489
+        },
+        {
+            "source": "All Ages",
+            "target": "Obesity",
+            "value": 4.690799436777973
+        },
+        {
+            "source": "0-24",
+            "target": "Alzheimer disease",
+            "value": 0.0
+        },
+        {
+            "source": "25-34",
+            "target": "Alzheimer disease",
+            "value": 0.0001772253074194489
+        },
+        {
+            "source": "35-44",
+            "target": "Alzheimer disease",
+            "value": 0.0002658379611291733
+        },
+        {
+            "source": "45-54",
+            "target": "Alzheimer disease",
+            "value": 0.0031014428798403553
+        },
+        {
+            "source": "55-64",
+            "target": "Alzheimer disease",
+            "value": 0.027912985918563202
+        },
+        {
+            "source": "65-74",
+            "target": "Alzheimer disease",
+            "value": 0.2108981158291442
+        },
+        {
+            "source": "75-84",
+            "target": "Alzheimer disease",
+            "value": 0.9047351943762865
+        },
+        {
+            "source": "85+",
+            "target": "Alzheimer disease",
+            "value": 1.9151852846282742
+        },
+        {
+            "source": "Not stated",
+            "target": "Alzheimer disease",
+            "value": 0.0
+        },
+        {
+            "source": "All Ages",
+            "target": "Alzheimer disease",
+            "value": 3.0622760869006576
+        },
+        {
+            "source": "0-24",
+            "target": "Vascular and unspecified dementia",
+            "value": 0.0
+        },
+        {
+            "source": "25-34",
+            "target": "Vascular and unspecified dementia",
+            "value": 0.0001772253074194489
+        },
+        {
+            "source": "35-44",
+            "target": "Vascular and unspecified dementia",
+            "value": 0.0009747391908069688
+        },
+        {
+            "source": "45-54",
+            "target": "Vascular and unspecified dementia",
+            "value": 0.008684040063552995
+        },
+        {
+            "source": "55-64",
+            "target": "Vascular and unspecified dementia",
+            "value": 0.10633518445166933
+        },
+        {
+            "source": "65-74",
+            "target": "Vascular and unspecified dementia",
+            "value": 0.6878114180948811
+        },
+        {
+            "source": "75-84",
+            "target": "Vascular and unspecified dementia",
+            "value": 2.4374682655933904
+        },
+        {
+            "source": "85+",
+            "target": "Vascular and unspecified dementia",
+            "value": 4.827262923490949
+        },
+        {
+            "source": "Not stated",
+            "target": "Vascular and unspecified dementia",
+            "value": 0.0001772253074194489
+        },
+        {
+            "source": "All Ages",
+            "target": "Vascular and unspecified dementia",
+            "value": 8.068891021500088
+        },
+        {
+            "source": "0-24",
+            "target": "Renal failure",
+            "value": 0.023570965886786702
+        },
+        {
+            "source": "25-34",
+            "target": "Renal failure",
+            "value": 0.10606934649054016
+        },
+        {
+            "source": "35-44",
+            "target": "Renal failure",
+            "value": 0.29853603034806164
+        },
+        {
+            "source": "45-54",
+            "target": "Renal failure",
+            "value": 0.8088563030623648
+        },
+        {
+            "source": "55-64",
+            "target": "Renal failure",
+            "value": 1.8141668593991884
+        },
+        {
+            "source": "65-74",
+            "target": "Renal failure",
+            "value": 2.884164652944111
+        },
+        {
+            "source": "75-84",
+            "target": "Renal failure",
+            "value": 2.9476999256539833
+        },
+        {
+            "source": "85+",
+            "target": "Renal failure",
+            "value": 2.4293159014520955
+        },
+        {
+            "source": "Not stated",
+            "target": "Renal failure",
+            "value": 0.0002658379611291733
+        },
+        {
+            "source": "All Ages",
+            "target": "Renal failure",
+            "value": 11.312645823198261
+        },
+        {
+            "source": "0-24",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.03571089944501895
+        },
+        {
+            "source": "25-34",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.07390295319391019
+        },
+        {
+            "source": "35-44",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.11971569516183772
+        },
+        {
+            "source": "45-54",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.19477061285397432
+        },
+        {
+            "source": "55-64",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.3683628014713245
+        },
+        {
+            "source": "65-74",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.5463856227741609
+        },
+        {
+            "source": "75-84",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.6211747025051683
+        },
+        {
+            "source": "85+",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.7175852697413485
+        },
+        {
+            "source": "Not stated",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 0.0003544506148388978
+        },
+        {
+            "source": "All Ages",
+            "target": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "value": 2.677963007761582
+        },
+        {
+            "source": "0-24",
+            "target": "All other conditions and causes (residual)",
+            "value": 0.20265713903413982
+        },
+        {
+            "source": "25-34",
+            "target": "All other conditions and causes (residual)",
+            "value": 0.4715965430431535
+        },
+        {
+            "source": "35-44",
+            "target": "All other conditions and causes (residual)",
+            "value": 1.0903787038981592
+        },
+        {
+            "source": "45-54",
+            "target": "All other conditions and causes (residual)",
+            "value": 2.5570067354478083
+        },
+        {
+            "source": "55-64",
+            "target": "All other conditions and causes (residual)",
+            "value": 5.956719807675096
+        },
+        {
+            "source": "65-74",
+            "target": "All other conditions and causes (residual)",
+            "value": 9.646727933455441
+        },
+        {
+            "source": "75-84",
+            "target": "All other conditions and causes (residual)",
+            "value": 10.942156318037902
+        },
+        {
+            "source": "85+",
+            "target": "All other conditions and causes (residual)",
+            "value": 10.613403372774826
+        },
+        {
+            "source": "Not stated",
+            "target": "All other conditions and causes (residual)",
+            "value": 0.0012405771519361424
+        },
+        {
+            "source": "All Ages",
+            "target": "All other conditions and causes (residual)",
+            "value": 41.481887130518466
+        },
+        {
+            "source": "0-24",
+            "target": "COVID-19",
+            "value": 0.37190730761971347
+        },
+        {
+            "source": "25-34",
+            "target": "COVID-19",
+            "value": 1.0812516005660575
+        },
+        {
+            "source": "35-44",
+            "target": "COVID-19",
+            "value": 2.6422521083165633
+        },
+        {
+            "source": "45-54",
+            "target": "COVID-19",
+            "value": 6.278915416563654
+        },
+        {
+            "source": "55-64",
+            "target": "COVID-19",
+            "value": 14.022775224256472
+        },
+        {
+            "source": "65-74",
+            "target": "COVID-19",
+            "value": 22.472080368132406
+        },
+        {
+            "source": "75-84",
+            "target": "COVID-19",
+            "value": 26.109895640877728
+        },
+        {
+            "source": "85+",
+            "target": "COVID-19",
+            "value": 27.01888424263208
+        },
+        {
+            "source": "Not stated",
+            "target": "COVID-19",
+            "value": 0.002038091035323662
+        },
+        {
+            "source": "All Ages",
+            "target": "COVID-19",
+            "value": 100.0
+        }
+    ]
+}

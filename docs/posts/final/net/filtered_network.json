@@ -1,0 +1,244 @@
+{
+    "nodes": [
+        {
+            "id": "75-84",
+            "group": 0
+        },
+        {
+            "id": "65-74",
+            "group": 1
+        },
+        {
+            "id": "25-34",
+            "group": 2
+        },
+        {
+            "id": "45-54",
+            "group": 3
+        },
+        {
+            "id": "85+",
+            "group": 4
+        },
+        {
+            "id": "Not stated",
+            "group": 5
+        },
+        {
+            "id": "0-24",
+            "group": 6
+        },
+        {
+            "id": "55-64",
+            "group": 7
+        },
+        {
+            "id": "35-44",
+            "group": 8
+        },
+        {
+            "id": "All Ages",
+            "group": 9
+        },
+        {
+            "id": "Malignant neoplasms",
+            "group": 10
+        },
+        {
+            "id": "Vascular and unspecified dementia",
+            "group": 11
+        },
+        {
+            "id": "Renal failure",
+            "group": 12
+        },
+        {
+            "id": "Intentional and unintentional injury, poisoning, and other adverse events",
+            "group": 13
+        },
+        {
+            "id": "All other conditions and causes (residual)",
+            "group": 14
+        },
+        {
+            "id": "Obesity",
+            "group": 15
+        },
+        {
+            "id": "Diabetes",
+            "group": 16
+        },
+        {
+            "id": "Sepsis",
+            "group": 17
+        },
+        {
+            "id": "Respiratory diseases",
+            "group": 18
+        },
+        {
+            "id": "COVID-19",
+            "group": 19
+        },
+        {
+            "id": "Alzheimer disease",
+            "group": 20
+        },
+        {
+            "id": "Circulatory diseases",
+            "group": 21
+        }
+    ],
+    "links": [
+        {
+            "source": "0-24",
+            "target": "Respiratory diseases",
+            "value": 0.13681793732781453
+        },
+        {
+            "source": "25-34",
+            "target": "Respiratory diseases",
+            "value": 0.5102316600605933
+        },
+        {
+            "source": "35-44",
+            "target": "Respiratory diseases",
+            "value": 1.3288353550310277
+        },
+        {
+            "source": "45-54",
+            "target": "Respiratory diseases",
+            "value": 3.3008213506872353
+        },
+        {
+            "source": "55-64",
+            "target": "Respiratory diseases",
+            "value": 7.282453719826283
+        },
+        {
+            "source": "65-74",
+            "target": "Respiratory diseases",
+            "value": 11.335596500509078
+        },
+        {
+            "source": "75-84",
+            "target": "Respiratory diseases",
+            "value": 12.11370421273417
+        },
+        {
+            "source": "85+",
+            "target": "Respiratory diseases",
+            "value": 10.549247811488986
+        },
+        {
+            "source": "Not stated",
+            "target": "Respiratory diseases",
+            "value": 0.0010633518445166933
+        },
+        {
+            "source": "All Ages",
+            "target": "Respiratory diseases",
+            "value": 46.55877189950971
+        },
+        {
+            "source": "0-24",
+            "target": "All other conditions and causes (residual)",
+            "value": 0.20265713903413982
+        },
+        {
+            "source": "25-34",
+            "target": "All other conditions and causes (residual)",
+            "value": 0.4715965430431535
+        },
+        {
+            "source": "35-44",
+            "target": "All other conditions and causes (residual)",
+            "value": 1.0903787038981592
+        },
+        {
+            "source": "45-54",
+            "target": "All other conditions and causes (residual)",
+            "value": 2.5570067354478083
+        },
+        {
+            "source": "55-64",
+            "target": "All other conditions and causes (residual)",
+            "value": 5.956719807675096
+        },
+        {
+            "source": "65-74",
+            "target": "All other conditions and causes (residual)",
+            "value": 9.646727933455441
+        },
+        {
+            "source": "75-84",
+            "target": "All other conditions and causes (residual)",
+            "value": 10.942156318037902
+        },
+        {
+            "source": "85+",
+            "target": "All other conditions and causes (residual)",
+            "value": 10.613403372774826
+        },
+        {
+            "source": "Not stated",
+            "target": "All other conditions and causes (residual)",
+            "value": 0.0012405771519361424
+        },
+        {
+            "source": "All Ages",
+            "target": "All other conditions and causes (residual)",
+            "value": 41.481887130518466
+        },
+        {
+            "source": "0-24",
+            "target": "COVID-19",
+            "value": 0.37190730761971347
+        },
+        {
+            "source": "25-34",
+            "target": "COVID-19",
+            "value": 1.0812516005660575
+        },
+        {
+            "source": "35-44",
+            "target": "COVID-19",
+            "value": 2.6422521083165633
+        },
+        {
+            "source": "45-54",
+            "target": "COVID-19",
+            "value": 6.278915416563654
+        },
+        {
+            "source": "55-64",
+            "target": "COVID-19",
+            "value": 14.022775224256472
+        },
+        {
+            "source": "65-74",
+            "target": "COVID-19",
+            "value": 22.472080368132406
+        },
+        {
+            "source": "75-84",
+            "target": "COVID-19",
+            "value": 26.109895640877728
+        },
+        {
+            "source": "85+",
+            "target": "COVID-19",
+            "value": 27.01888424263208
+        },
+        {
+            "source": "Not stated",
+            "target": "COVID-19",
+            "value": 0.002038091035323662
+        },
+        {
+            "source": "All Ages",
+            "target": "COVID-19",
+            "value": 100.0
+        }
+    ]
+}
